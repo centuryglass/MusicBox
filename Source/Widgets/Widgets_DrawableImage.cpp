@@ -51,6 +51,11 @@ Widgets::DrawableImage::DrawableImage
 (const juce::RectanglePlacement placement) :
 placement(placement)
 {
+    setColour(Widgets::DrawableImage::imageColour0Id, Colour(0xffffffff));
+    setColour(Widgets::DrawableImage::imageColour1Id, Colour(0xff000000));
+    setColour(Widgets::DrawableImage::imageColour2Id, Colour(0xffff0000));
+    setColour(Widgets::DrawableImage::imageColour3Id, Colour(0xff00ff00));
+    setColour(Widgets::DrawableImage::imageColour4Id, Colour(0xff0000ff));
 #    if JUCE_DEBUG
     setName("Widgets::DrawableImage");
 #    endif

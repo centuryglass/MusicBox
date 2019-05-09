@@ -42,6 +42,11 @@ Widgets::DrawableImageButton::DrawableImageButton
 Button("DrawableImageButton"),
 imageComponent(placement)
 {
+    setColour(Widgets::DrawableImage::imageColour0Id, Colour(0xffffffff));
+    setColour(Widgets::DrawableImage::imageColour1Id, Colour(0xff000000));
+    setColour(Widgets::DrawableImage::imageColour2Id, Colour(0xffff0000));
+    setColour(Widgets::DrawableImage::imageColour3Id, Colour(0xff00ff00));
+    setColour(Widgets::DrawableImage::imageColour4Id, Colour(0xff0000ff));
     // Transfer colour values to the DrawableImage before any image is set:
     colourChanged();
     addAndMakeVisible(imageComponent);
@@ -87,8 +92,8 @@ void Widgets::DrawableImageButton::colourChanged()
         colourId <= DrawableImage::imageColour4Id;
         colourId++)
     {
-        Colour imageColour = imageComponent.findColour(colourId, false);
-        Colour buttonColour = findColour(colourId, false);
+        Colour imageColour = imageComponent.findColour(colourId, true);
+        Colour buttonColour = findColour(colourId, true);
         if (imageColour != buttonColour)
         {
             imageComponent.setColour(colourId, buttonColour);

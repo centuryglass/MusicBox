@@ -11,19 +11,6 @@ namespace Widgets { class NavButton; }
 
 /**
  * @brief  A directional navigation button assigned to one edge of the window.
- *
- *  NavButton objects are meant to be used for navigating between page
- * components and scrolling page content. NavButton's relative position and
- * size are defined in the Layout::Component configuration file, and its image
- * resources and colours are defined in the Theme::Image configuration file.
- *
- *  Unless the Layout::Component configuration file has been edited to place
- * them somewhere else, NavButtons sit centered against the side of the window
- * assigned to them on construction, pointing towards the assigned edge.
- *
- *  Because NavButtons are meant to be placed on the margins of the window,
- * convenience functions are provided to find the margin fractions needed to
- * keep other window content from overlapping with the arrow buttons.
  */
 class Widgets::NavButton : public DrawableImageButton
 {

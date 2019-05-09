@@ -474,9 +474,10 @@ build/intermediate/Debug/MainComponent_a6ffb4a5.o: \
  /opt/JUCE/modules/juce_opengl/opengl/juce_OpenGLTexture.h \
  /opt/JUCE/modules/juce_opengl/utils/juce_OpenGLAppComponent.h \
  ../../Source/../JuceLibraryCode/BinaryData.h \
- ../../Source/Widgets/Widgets_NavButton.h \
+ ../../Source/ScrollingPage.h ../../Source/Widgets/Widgets_NavButton.h \
  ../../Source/Widgets/Widgets_DrawableImageButton.h \
  ../../Source/Widgets/Widgets_DrawableImage.h \
  ../../Source/Layout/Group/Layout_Group_Manager.h \
  ../../Source/Layout/Group/Layout_Group_RelativeLayout.h \
- ../../Source/Layout/Transition/Layout_Transition_Type.h
+ ../../Source/Layout/Transition/Layout_Transition_Type.h \
+ ../../Source/MusicStrip.h

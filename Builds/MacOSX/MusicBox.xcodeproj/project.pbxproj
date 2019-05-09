@@ -101,17 +101,25 @@
 			isa = PBXBuildFile;
 			fileRef = 320EBCC7C203CA11DBEDF802;
 		};
+		A423E1D4371AD9E058C97745 = {
+			isa = PBXBuildFile;
+			fileRef = B105E4586EDEE80B6EF5F9CB;
+		};
 		CB9211354777EB0684B6089A = {
 			isa = PBXBuildFile;
 			fileRef = B368EAFC403CA0CEF1A085DD;
 		};
-		58680906A1C03F597357B8ED = {
+		F4B0CEBF3C9A56188A3573F7 = {
 			isa = PBXBuildFile;
-			fileRef = 2B8390B776DAE2B10B5738DE;
+			fileRef = CC3ECF586D8BA0FF538901B6;
 		};
 		936E4215B25C97108B6E0017 = {
 			isa = PBXBuildFile;
 			fileRef = 41FC2EE7B0384F936DD12F7B;
+		};
+		58680906A1C03F597357B8ED = {
+			isa = PBXBuildFile;
+			fileRef = 2B8390B776DAE2B10B5738DE;
 		};
 		A1AE8C0971D7EE517C1BD8FC = {
 			isa = PBXBuildFile;
@@ -536,6 +544,13 @@
 			path = ../../Source/ScrollingPage.h;
 			sourceTree = "SOURCE_ROOT";
 		};
+		6B19B2CAA26C21EFEFFF29E1 = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = LookAndFeel.h;
+			path = ../../Source/LookAndFeel.h;
+			sourceTree = "SOURCE_ROOT";
+		};
 		6EF962F2B27C38102F665B77 = {
 			isa = PBXFileReference;
 			lastKnownFileType = sourcecode.cpp.cpp;
@@ -690,6 +705,13 @@
 			path = "../../Source/Widgets/Widgets_DrawableImage.h";
 			sourceTree = "SOURCE_ROOT";
 		};
+		A2A0DC18969D2CFE7ECC25AE = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = MusicStrip.h;
+			path = ../../Source/MusicStrip.h;
+			sourceTree = "SOURCE_ROOT";
+		};
 		A7AC0660234629186EB6AE92 = {
 			isa = PBXFileReference;
 			lastKnownFileType = sourcecode.cpp.cpp;
@@ -730,6 +752,13 @@
 			lastKnownFileType = sourcecode.cpp.cpp;
 			name = "Widgets_LayoutContainer.cpp";
 			path = "../../Source/Widgets/Widgets_LayoutContainer.cpp";
+			sourceTree = "SOURCE_ROOT";
+		};
+		B105E4586EDEE80B6EF5F9CB = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.cpp;
+			name = LookAndFeel.cpp;
+			path = ../../Source/LookAndFeel.cpp;
 			sourceTree = "SOURCE_ROOT";
 		};
 		B368EAFC403CA0CEF1A085DD = {
@@ -828,6 +857,13 @@
 			lastKnownFileType = sourcecode.c.h;
 			name = AppConfig.h;
 			path = ../../JuceLibraryCode/AppConfig.h;
+			sourceTree = "SOURCE_ROOT";
+		};
+		CC3ECF586D8BA0FF538901B6 = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.cpp;
+			name = MusicStrip.cpp;
+			path = ../../Source/MusicStrip.cpp;
 			sourceTree = "SOURCE_ROOT";
 		};
 		CDF9566B6522755BA1FB6665 = {
@@ -1065,9 +1101,14 @@
 				FC6D10087D37539C765129A9,
 				A1B46AADC5EABCA45A2DA7A9,
 				C8A806D7AF1A146F8821B6FF,
+				B105E4586EDEE80B6EF5F9CB,
+				6B19B2CAA26C21EFEFFF29E1,
 				572877BB311CF8F22AE9D95F,
 				B368EAFC403CA0CEF1A085DD,
-				2B8390B776DAE2B10B5738DE,
+				CC3ECF586D8BA0FF538901B6,
+				A2A0DC18969D2CFE7ECC25AE,
+				41FC2EE7B0384F936DD12F7B,
+				68E33EFC78384CE64C2C4CF1,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -1077,8 +1118,7 @@
 			children = (
 				324FE934D696F47ED9FEE860,
 				277A7DEA8BF93AD358676052,
-				41FC2EE7B0384F936DD12F7B,
-				68E33EFC78384CE64C2C4CF1,
+				2B8390B776DAE2B10B5738DE,
 			);
 			name = MusicBox;
 			sourceTree = "<group>";
@@ -1412,9 +1452,11 @@
 				1F995167F698F485A7F96F66,
 				1EF9C59FABDCAB0D0DB24761,
 				69F47F219AFE317BE38603F3,
+				A423E1D4371AD9E058C97745,
 				CB9211354777EB0684B6089A,
-				58680906A1C03F597357B8ED,
+				F4B0CEBF3C9A56188A3573F7,
 				936E4215B25C97108B6E0017,
+				58680906A1C03F597357B8ED,
 				A1AE8C0971D7EE517C1BD8FC,
 				ABC629F445EC0B97BC107E07,
 				7F1B9A50EF444C219BA1B84D,

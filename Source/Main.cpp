@@ -10,6 +10,7 @@
 
 #include "../JuceLibraryCode/JuceHeader.h"
 #include "MainComponent.h"
+#include "LookAndFeel.h"
 
 //==============================================================================
 class MusicBoxApplication  : public JUCEApplication
@@ -28,6 +29,10 @@ public:
         // This method is where you should put your application's initialisation code..
 
         mainWindow.reset (new MainWindow (getApplicationName()));
+        lookAndFeel.reset (new MusicBox::LookAndFeel);
+        mainWindow->setLookAndFeel(lookAndFeel.get());
+        mainWindow->setContentOwned(new MainComponent, true);
+        mainWindow->setVisible(true);
     }
 
     void shutdown() override
@@ -66,7 +71,6 @@ public:
                                                     DocumentWindow::allButtons)
         {
             setUsingNativeTitleBar (true);
-            setContentOwned (new MainComponent(), true);
 
            #if JUCE_IOS || JUCE_ANDROID
             setFullScreen (true);
@@ -74,8 +78,6 @@ public:
             setResizable (true, true);
             centreWithSize (getWidth(), getHeight());
            #endif
-
-            setVisible (true);
         }
 
         void closeButtonPressed() override
@@ -99,6 +101,7 @@ public:
 
 private:
     std::unique_ptr<MainWindow> mainWindow;
+    std::unique_ptr<MusicBox::LookAndFeel> lookAndFeel;
 };
 
 //==============================================================================

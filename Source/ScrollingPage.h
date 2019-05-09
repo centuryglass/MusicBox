@@ -10,8 +10,12 @@
 
 #pragma once
 #include "../JuceLibraryCode/JuceHeader.h"
+#include "Widgets_NavButton.h"
+#include "Layout_Group_Manager.h"
+#include "MusicStrip.h"
 
-class ScrollingPage : public Component
+
+class ScrollingPage : public Component, public Button::Listener
 {
 public:
     ScrollingPage();
@@ -19,4 +23,16 @@ public:
     virtual ~ScrollingPage() { }
     
 private:
+    void buttonClicked(Button* navButton) override;
+    
+    void resized() override;
+    
+    Rectangle<int> getStripBounds(const int index) const;
+    
+    Layout::Group::Manager layoutManager;
+    Widgets::NavButton upButton;
+    Widgets::NavButton downButton;
+    
+    float stripNum = 0;
+    OwnedArray<MusicStrip> musicStrips;
 };

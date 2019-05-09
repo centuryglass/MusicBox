@@ -135,14 +135,18 @@
         <FILE id="rWYctV" name="Assets_JSONFile.h" compile="0" resource="0"
               file="Source/Assets/Assets_JSONFile.h"/>
       </GROUP>
+      <FILE id="fB8eun" name="LookAndFeel.cpp" compile="1" resource="0" file="Source/LookAndFeel.cpp"/>
+      <FILE id="ccNEnl" name="LookAndFeel.h" compile="0" resource="0" file="Source/LookAndFeel.h"/>
       <FILE id="zI9SAM" name="MainComponent.h" compile="0" resource="0" file="Source/MainComponent.h"/>
       <FILE id="NBGzoq" name="MainComponent.cpp" compile="1" resource="0"
             file="Source/MainComponent.cpp"/>
-      <FILE id="yl7M2g" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
+      <FILE id="UodMg8" name="MusicStrip.cpp" compile="1" resource="0" file="Source/MusicStrip.cpp"/>
+      <FILE id="t5nydV" name="MusicStrip.h" compile="0" resource="0" file="Source/MusicStrip.h"/>
+      <FILE id="zAI64V" name="ScrollingPage.cpp" compile="1" resource="0"
+            file="Source/ScrollingPage.cpp"/>
+      <FILE id="Ub51Cp" name="ScrollingPage.h" compile="0" resource="0" file="Source/ScrollingPage.h"/>
     </GROUP>
-    <FILE id="zAI64V" name="ScrollingPage.cpp" compile="1" resource="0"
-          file="Source/ScrollingPage.cpp"/>
-    <FILE id="Ub51Cp" name="ScrollingPage.h" compile="0" resource="0" file="Source/ScrollingPage.h"/>
+    <FILE id="yl7M2g" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
   </MAINGROUP>
   <EXPORTFORMATS>
     <XCODE_MAC targetFolder="Builds/MacOSX">

@@ -9,8 +9,7 @@
 #pragma once
 
 #include "../JuceLibraryCode/JuceHeader.h"
-#include "Widgets_NavButton.h"
-#include "Layout_Group_Manager.h"
+#include "ScrollingPage.h"
 
 //==============================================================================
 /*
@@ -31,9 +30,7 @@ public:
 private:
     //==============================================================================
     // Your private member variables go here...
-    Layout::Group::Manager layoutManager;
-    Widgets::NavButton upButton;
-    Widgets::NavButton downButton;
+    ScrollingPage scrollingPage;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainComponent)
 };

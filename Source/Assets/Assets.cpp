@@ -6,7 +6,7 @@ static const constexpr char* dbgPrefix = "Assets::";
 #endif
 
 // TODO: Select this using XDGDirectories:
-static const constexpr char* assetFolder = "./Assets";
+static const constexpr char* assetFolder = "./Assets/";
 
 
 /**

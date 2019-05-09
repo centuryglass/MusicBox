@@ -80,9 +80,11 @@ OBJECTS_APP := \
   $(JUCE_OBJDIR)/Widgets_NavButton_1d8287e6.o \
   $(JUCE_OBJDIR)/Assets_8cb35390.o \
   $(JUCE_OBJDIR)/Assets_JSONFile_d5d06a9d.o \
+  $(JUCE_OBJDIR)/LookAndFeel_40552bdf.o \
   $(JUCE_OBJDIR)/MainComponent_a6ffb4a5.o \
-  $(JUCE_OBJDIR)/Main_90ebc5c2.o \
+  $(JUCE_OBJDIR)/MusicStrip_4f1e97fc.o \
   $(JUCE_OBJDIR)/ScrollingPage_898fa385.o \
+  $(JUCE_OBJDIR)/Main_90ebc5c2.o \
   $(JUCE_OBJDIR)/BinaryData_ce4232d4.o \
   $(JUCE_OBJDIR)/include_juce_audio_basics_8a4e984a.o \
   $(JUCE_OBJDIR)/include_juce_audio_devices_63111d02.o \
@@ -170,19 +172,29 @@ $(JUCE_OBJDIR)/Assets_JSONFile_d5d06a9d.o: ../../Source/Assets/Assets_JSONFile.c
 	@echo "Compiling Assets_JSONFile.cpp"
 	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
 
+$(JUCE_OBJDIR)/LookAndFeel_40552bdf.o: ../../Source/LookAndFeel.cpp
+	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
+	@echo "Compiling LookAndFeel.cpp"
+	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
+
 $(JUCE_OBJDIR)/MainComponent_a6ffb4a5.o: ../../Source/MainComponent.cpp
 	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
 	@echo "Compiling MainComponent.cpp"
 	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
 
-$(JUCE_OBJDIR)/Main_90ebc5c2.o: ../../Source/Main.cpp
+$(JUCE_OBJDIR)/MusicStrip_4f1e97fc.o: ../../Source/MusicStrip.cpp
 	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
-	@echo "Compiling Main.cpp"
+	@echo "Compiling MusicStrip.cpp"
 	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
 
 $(JUCE_OBJDIR)/ScrollingPage_898fa385.o: ../../Source/ScrollingPage.cpp
 	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
 	@echo "Compiling ScrollingPage.cpp"
+	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
+
+$(JUCE_OBJDIR)/Main_90ebc5c2.o: ../../Source/Main.cpp
+	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
+	@echo "Compiling Main.cpp"
 	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
 
 $(JUCE_OBJDIR)/BinaryData_ce4232d4.o: ../../JuceLibraryCode/BinaryData.cpp
