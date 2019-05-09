@@ -1,13 +1,3 @@
-/*
-  ==============================================================================
-
-    MusicStrip.cpp
-    Created: 8 May 2019 3:46:06pm
-    Author:  anthony
-
-  ==============================================================================
-*/
-
 #include "MusicStrip.h"
 
 static const constexpr char* startPath = "musicStart.svg";
@@ -17,43 +7,19 @@ static const constexpr int height = 243;
 static const constexpr int paddedWidth = 165;
 static const constexpr float yOffset = 0.05;
 
+
+// Creates the component, loading its image.
 MusicStrip::MusicStrip(const bool isStart) :
 isStart(isStart),
-backgroundImage((isStart ? startPath : midPath), RectanglePlacement::stretchToFit)
+backgroundImage((isStart ? startPath : midPath),
+        RectanglePlacement::stretchToFit)
 {
     addAndMakeVisible(backgroundImage);
     addMouseListener(this, true);
 }
 
-void MusicStrip::resized()
-{
-    // Recalculate image bounds:
-    const float imageRatio = (float) width / (float) height;
-    const float stripRatio = (float) getWidth() / (float) getHeight();
-    const float imageHeight = getHeight();
-    const float imageWidth = imageHeight * imageRatio;
-    imageBounds.setBounds(
-            (getWidth() - imageWidth) / 2,
-            (getHeight() - imageHeight) / 2,
-            imageWidth,
-            imageHeight);
-    const int fullWidth = (float) width * imageBounds.getHeight() 
-            / (float) paddedWidth;
-    backgroundImage.setBounds(imageBounds.withSizeKeepingCentre(fullWidth,
-            imageBounds.getHeight()));
-}
 
-void MusicStrip::mouseDown(const MouseEvent& event)
-{
-    const int maxError = imageBounds.getWidth() / 40;
-    const int note = getClosestNote(event.position.x, maxError);
-    const int beat = getClosestBeat(event.position.y, maxError);
-    if (note != -1 && beat != -1)
-    {
-        DBG("note " << note << ", beat " << beat);
-    }
-}
-
+// Gets the x-position of a note within the component.
 int MusicStrip::getNoteX(const int note) const
 {
     if (note < 0 || note > 14)
@@ -64,6 +30,8 @@ int MusicStrip::getNoteX(const int note) const
     return imageBounds.getX() + getNoteWidth() * note;
 }
 
+
+// Gets the y-position of a beat within the component.
 int MusicStrip::getBeatY(const int beat) const
 {
     const int beatCount = (isStart ? 24 : 32);
@@ -75,6 +43,8 @@ int MusicStrip::getBeatY(const int beat) const
     return getBeatTop() + getBeatHeight() * beat;
 }
 
+
+// Gets the closest note to an x-coordinate if within a certain error range.
 int MusicStrip::getClosestNote(const int xPos, const int maxError) const
 {
     const float xOffset = xPos - imageBounds.getX();
@@ -97,10 +67,13 @@ int MusicStrip::getClosestNote(const int xPos, const int maxError) const
     return closestNote;
 }
 
+
+// Gets the closest beat to a y-coordinate if within a certain error range.
 int MusicStrip::getClosestBeat(const int yPos, const int maxError) const
 {
     const float yTop = getBeatTop();
-    const float stripHeight = (float) imageBounds.getHeight() - (yTop - (float) imageBounds.getY());
+    const float stripHeight = (float) imageBounds.getHeight() 
+            - (yTop - (float) imageBounds.getY());
     const float yOffset = (float) yPos - yTop;
     if (yOffset < -maxError || yOffset > (stripHeight + maxError))
     {
@@ -121,6 +94,58 @@ int MusicStrip::getClosestBeat(const int yPos, const int maxError) const
     return closestBeat;
 }
 
+
+// Adds a listener to the list of objects receiving noteClicked updates.
+void MusicStrip::addListener(Listener* listener)
+{
+    listeners.addIfNotAlreadyThere(listener);
+}
+
+
+// Removes a listener from the list of objects receiving noteClicked updates.
+void MusicStrip::removeListener(Listener* listener)
+{
+    listeners.removeAllInstancesOf(listener);
+}
+
+
+// Updates the internal image size when the strip's bounds change.
+void MusicStrip::resized()
+{
+    // Recalculate image bounds:
+    const float imageRatio = (float) width / (float) height;
+    const float stripRatio = (float) getWidth() / (float) getHeight();
+    const float imageHeight = getHeight();
+    const float imageWidth = imageHeight * imageRatio;
+    imageBounds.setBounds(
+            (getWidth() - imageWidth) / 2,
+            (getHeight() - imageHeight) / 2,
+            imageWidth,
+            imageHeight);
+    const int fullWidth = (float) width * imageBounds.getHeight() 
+            / (float) paddedWidth;
+    backgroundImage.setBounds(imageBounds.withSizeKeepingCentre(fullWidth,
+            imageBounds.getHeight()));
+}
+
+// Notifies listeners when notes are clicked.
+void MusicStrip::mouseDown(const MouseEvent& event)
+{
+    const int maxError = imageBounds.getWidth() / 40;
+    const int note = getClosestNote(event.position.x, maxError);
+    const int beat = getClosestBeat(event.position.y, maxError);
+    if (note != -1 && beat != -1)
+    {
+        //DBG("note " << note << ", beat " << beat);
+        for (Listener* listener : listeners)
+        {
+            listener->noteClicked(this, note, beat);
+        }
+    }
+}
+
+
+// Optionally draws calculated coordinates for debugging purposes.
 void MusicStrip::paint(Graphics& g) 
 {   
     /*
@@ -167,16 +192,22 @@ void MusicStrip::paint(Graphics& g)
     */
 }
 
+
+// Gets the width of a note in the component.
 float MusicStrip::getNoteWidth() const
 {
     return (float) imageBounds.getWidth() / 14.0;
 }
 
+
+// Gets the height of a beat in the component.
 float MusicStrip::getBeatHeight() const
 {
     return (float) imageBounds.getHeight() / 32.0;
 }
     
+
+// Gets the y-coordinate of the first beat in the component.
 float MusicStrip::getBeatTop() const
 {
     return imageBounds.getY() + (isStart ? getBeatHeight() * 8.0 : 0.0);

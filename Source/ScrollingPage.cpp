@@ -1,17 +1,10 @@
-/*
-  ==============================================================================
-
-    ScrollingPage.cpp
-    Created: 8 May 2019 2:31:43am
-    Author:  anthony
-
-  ==============================================================================
-*/
+#include "ScrollingPage.h"
+#include "Layout_Transition_Animator.h"
 
 static const constexpr int animationMS = 200;
 
-#include "ScrollingPage.h"
-#include "Layout_Transition_Animator.h"
+
+// Initializes the component layout and creates the first music strips.
 ScrollingPage::ScrollingPage():
 upButton(Widgets::NavButton::WindowEdge::up),
 downButton(Widgets::NavButton::WindowEdge::down)
@@ -45,6 +38,9 @@ downButton(Widgets::NavButton::WindowEdge::down)
     addAndMakeVisible(musicStrips[1]);
 }
 
+
+// Scrolls the list when the navigation buttons are clicked, creating new music
+// strips when approaching the bottom edge.
 void ScrollingPage::buttonClicked(Button* navButton)
 {
     if (Layout::Transition::Animator::isAnimating(this))
@@ -77,6 +73,8 @@ void ScrollingPage::buttonClicked(Button* navButton)
     }
 }
 
+
+// Applies the page layout when the component's bounds change.
 void ScrollingPage::resized()
 {
     layoutManager.layoutComponents(getLocalBounds());
@@ -86,7 +84,10 @@ void ScrollingPage::resized()
     }
 }
 
+
+// Gets the bounds relative to the component where a MusicStrip should be drawn.
 Rectangle<int> ScrollingPage::getStripBounds(const int index) const
 {
-    return Rectangle<int>(0, (index - stripNum) * getHeight(), upButton.getX(), getHeight());
+    return Rectangle<int>(0, (index - stripNum) * getHeight(), upButton.getX(),
+            getHeight());
 }
