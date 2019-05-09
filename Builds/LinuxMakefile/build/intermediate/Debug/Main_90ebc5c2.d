@@ -480,4 +480,5 @@ build/intermediate/Debug/Main_90ebc5c2.o: ../../Source/Main.cpp \
  ../../Source/Layout/Group/Layout_Group_Manager.h \
  ../../Source/Layout/Group/Layout_Group_RelativeLayout.h \
  ../../Source/Layout/Transition/Layout_Transition_Type.h \
- ../../Source/MusicStrip.h ../../Source/LookAndFeel.h
+ ../../Source/MusicStrip.h ../../Source/NoteGrid.h \
+ ../../Source/LookAndFeel.h

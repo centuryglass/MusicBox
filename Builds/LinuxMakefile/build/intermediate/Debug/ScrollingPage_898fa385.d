@@ -480,5 +480,5 @@ build/intermediate/Debug/ScrollingPage_898fa385.o: \
  ../../Source/Layout/Group/Layout_Group_Manager.h \
  ../../Source/Layout/Group/Layout_Group_RelativeLayout.h \
  ../../Source/Layout/Transition/Layout_Transition_Type.h \
- ../../Source/MusicStrip.h \
+ ../../Source/MusicStrip.h ../../Source/NoteGrid.h \
  ../../Source/Layout/Transition/Layout_Transition_Animator.h

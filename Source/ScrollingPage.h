@@ -9,9 +9,11 @@
 #include "Widgets_NavButton.h"
 #include "Layout_Group_Manager.h"
 #include "MusicStrip.h"
+#include "NoteGrid.h"
 
 
-class ScrollingPage : public Component, public Button::Listener
+class ScrollingPage : public Component, public Button::Listener,
+    public MusicStrip::Listener
 {
 public:
     /**
@@ -31,6 +33,20 @@ private:
      */
     void buttonClicked(Button* navButton) override;
     
+    /**
+     * @brief  Toggles a note in the NoteGrid when it is clicked in a
+     *         MusicStrip.
+     *
+     * @param strip  The MusicStrip where the click occurred.
+     *
+     * @param note   The clicked note's value.
+     *
+     * @param beat   The beat within the MusicStrip where the note is
+     *               located.
+     */
+    void noteClicked(MusicStrip* strip, const int note, const int beat) 
+            override;
+
     /**
      * @brief  Applies the page layout when the component's bounds change.
      */
@@ -58,4 +74,6 @@ private:
     float stripNum = 0;
     // The sequence of music strip objects.
     OwnedArray<MusicStrip> musicStrips;
+    // Shows all music notes on the strip sequence.
+    NoteGrid noteGrid;
 };

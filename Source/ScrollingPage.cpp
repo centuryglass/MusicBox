@@ -36,6 +36,9 @@ downButton(Widgets::NavButton::WindowEdge::down)
     musicStrips.add(new MusicStrip(false));
     addAndMakeVisible(musicStrips[0]);
     addAndMakeVisible(musicStrips[1]);
+    musicStrips[0]->addListener(this);
+    musicStrips[1]->addListener(this);
+    addAndMakeVisible(noteGrid);
 }
 
 
@@ -63,14 +66,42 @@ void ScrollingPage::buttonClicked(Button* navButton)
     if (stripNum >= (musicStrips.size() - 2))
     {
         musicStrips.add(new MusicStrip(false));
+        musicStrips.getLast()->addListener(this);
         addAndMakeVisible(musicStrips.getLast());
-        musicStrips.getLast()->setBounds(getStripBounds(musicStrips.size()));
+        Rectangle<int> newStripBounds = getStripBounds(musicStrips.size());
+        musicStrips.getLast()->setBounds(newStripBounds);
+        noteGrid.setBounds(noteGrid.getBounds().withBottom(
+                    newStripBounds.getBottom()));
     }
+    const int newTop = musicStrips[0]->getBeatTop()// - musicStrips[0]->getY()
+            + getStripBounds(0).getY();
     for (int i = 0; i < musicStrips.size(); i++)
     {
         Layout::Transition::Animator::transformBounds(musicStrips[i],
                 getStripBounds(i), animationMS);
     }
+    Layout::Transition::Animator::transformBounds(&noteGrid,
+            noteGrid.getBounds().withY(newTop), animationMS);
+}
+
+// Toggles a note in the NoteGrid when it is clicked in a MusicStrip.
+void ScrollingPage::noteClicked(MusicStrip* strip, const int note,
+        const int beat) 
+{
+    const int stripIndex = musicStrips.indexOf(strip);
+    DBG("Clicked note " << note << ", beat " << beat << " in strip "
+            << stripIndex);
+    if (stripIndex < 0)
+    {
+        jassertfalse;
+        return;
+    }
+    int globalBeat = beat;
+    for (int i = 0; i < stripIndex; i++)
+    {
+        globalBeat += musicStrips[i]->getBeatCount();
+    }
+    noteGrid.toggleNote(note, globalBeat);
 }
 
 
@@ -82,6 +113,13 @@ void ScrollingPage::resized()
     {
         musicStrips[i]->setBounds(getStripBounds(i));
     }
+    int gridX = musicStrips[0]->getNoteX(0);
+    int gridY = musicStrips[0]->getBeatTop();
+    int gridWidth = getWidth() - gridX;
+    int gridHeight = musicStrips.getLast()->getBottom() - gridY;
+    noteGrid.setBounds(gridX, gridY, gridWidth, gridHeight);
+    noteGrid.setScale(musicStrips[0]->getNoteWidth(),
+            musicStrips[0]->getBeatHeight());
 }
 
 

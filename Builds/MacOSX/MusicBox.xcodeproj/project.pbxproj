@@ -101,6 +101,10 @@
 			isa = PBXBuildFile;
 			fileRef = 320EBCC7C203CA11DBEDF802;
 		};
+		7E56CC918BBAC8AE4F6A27BD = {
+			isa = PBXBuildFile;
+			fileRef = 8F3FFA076DF0C82C04518E61;
+		};
 		A423E1D4371AD9E058C97745 = {
 			isa = PBXBuildFile;
 			fileRef = B105E4586EDEE80B6EF5F9CB;
@@ -670,6 +674,13 @@
 			path = "../../Source/Layout/Group/Layout_Group_RelativeLayout.cpp";
 			sourceTree = "SOURCE_ROOT";
 		};
+		8F3FFA076DF0C82C04518E61 = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.cpp;
+			name = NoteGrid.cpp;
+			path = ../../Source/NoteGrid.cpp;
+			sourceTree = "SOURCE_ROOT";
+		};
 		91B287C6F022A3A68AADE5B2 = {
 			isa = PBXFileReference;
 			lastKnownFileType = file;
@@ -964,6 +975,13 @@
 			path = "~/JUCE/modules/juce_data_structures";
 			sourceTree = "<absolute>";
 		};
+		F17688F9C9D0F21F5C872EAE = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = NoteGrid.h;
+			path = ../../Source/NoteGrid.h;
+			sourceTree = "SOURCE_ROOT";
+		};
 		F1981F6DB574A0E88D4239A7 = {
 			isa = PBXFileReference;
 			lastKnownFileType = file;
@@ -1101,6 +1119,8 @@
 				FC6D10087D37539C765129A9,
 				A1B46AADC5EABCA45A2DA7A9,
 				C8A806D7AF1A146F8821B6FF,
+				8F3FFA076DF0C82C04518E61,
+				F17688F9C9D0F21F5C872EAE,
 				B105E4586EDEE80B6EF5F9CB,
 				6B19B2CAA26C21EFEFFF29E1,
 				572877BB311CF8F22AE9D95F,
@@ -1452,6 +1472,7 @@
 				1F995167F698F485A7F96F66,
 				1EF9C59FABDCAB0D0DB24761,
 				69F47F219AFE317BE38603F3,
+				7E56CC918BBAC8AE4F6A27BD,
 				A423E1D4371AD9E058C97745,
 				CB9211354777EB0684B6089A,
 				F4B0CEBF3C9A56188A3573F7,

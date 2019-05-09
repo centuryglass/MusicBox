@@ -73,6 +73,34 @@ public:
     int getClosestBeat(const int yPos, const int maxError) const;
 
     /**
+     * @brief  Gets the width of a note in the component.
+     *
+     * @return  The number of pixels between note values.
+     */
+    float getNoteWidth() const;
+
+    /**
+     * @brief  Gets the height of a beat in the component.
+     *
+     * @return   The number of pixels between beat values.
+     */
+    float getBeatHeight() const;
+
+    /**
+     * @brief  Gets the y-coordinate of the first beat in the component.
+     *
+     * @return  The first beat's distance from the top of the component.
+     */
+    float getBeatTop() const;
+
+    /**
+     * @brief  Gets the number of beats within this music strip.
+     *
+     * @return  The beat count.
+     */
+    int getBeatCount() const;
+
+    /**
      * @brief  An abstract basis for classes that track when notes are clicked
      *         within the MusicStrip.
      */
@@ -136,27 +164,6 @@ private:
      * @param g  The JUCE graphics context drawing the component.
      */
     void paint(Graphics& g) override;
-
-    /**
-     * @brief  Gets the width of a note in the component.
-     *
-     * @return  The number of pixels between note values.
-     */
-    float getNoteWidth() const;
-
-    /**
-     * @brief  Gets the height of a beat in the component.
-     *
-     * @return   The number of pixels between beat values.
-     */
-    float getBeatHeight() const;
-
-    /**
-     * @brief  Gets the y-coordinate of the first beat in the component.
-     *
-     * @return  The first beat's distance from the top of the component.
-     */
-    float getBeatTop() const;
     
     // Whether this is the first strip in a sequence:
     const bool isStart;

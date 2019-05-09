@@ -135,6 +135,8 @@
         <FILE id="rWYctV" name="Assets_JSONFile.h" compile="0" resource="0"
               file="Source/Assets/Assets_JSONFile.h"/>
       </GROUP>
+      <FILE id="oquAHH" name="NoteGrid.cpp" compile="1" resource="0" file="Source/NoteGrid.cpp"/>
+      <FILE id="UcpxGo" name="NoteGrid.h" compile="0" resource="0" file="Source/NoteGrid.h"/>
       <FILE id="fB8eun" name="LookAndFeel.cpp" compile="1" resource="0" file="Source/LookAndFeel.cpp"/>
       <FILE id="ccNEnl" name="LookAndFeel.h" compile="0" resource="0" file="Source/LookAndFeel.h"/>
       <FILE id="zI9SAM" name="MainComponent.h" compile="0" resource="0" file="Source/MainComponent.h"/>

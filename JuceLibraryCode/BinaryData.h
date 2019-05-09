@@ -15,10 +15,10 @@ namespace BinaryData
     const int            leftIcon_svgSize = 2412;
 
     extern const char*   musicMid_svg;
-    const int            musicMid_svgSize = 46467;
+    const int            musicMid_svgSize = 24460;
 
     extern const char*   musicStart_svg;
-    const int            musicStart_svgSize = 42329;
+    const int            musicStart_svgSize = 48707;
 
     extern const char*   musicStrip_svg;
     const int            musicStrip_svgSize = 151948;

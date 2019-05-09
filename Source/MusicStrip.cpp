@@ -15,7 +15,6 @@ backgroundImage((isStart ? startPath : midPath),
         RectanglePlacement::stretchToFit)
 {
     addAndMakeVisible(backgroundImage);
-    addMouseListener(this, true);
 }
 
 
@@ -34,8 +33,7 @@ int MusicStrip::getNoteX(const int note) const
 // Gets the y-position of a beat within the component.
 int MusicStrip::getBeatY(const int beat) const
 {
-    const int beatCount = (isStart ? 24 : 32);
-    if (beat < 0 || beat > beatCount)
+    if (beat < 0 || beat > getBeatCount())
     {
         DBG("Invalid beat " << beat);
         return -1;
@@ -109,6 +107,34 @@ void MusicStrip::removeListener(Listener* listener)
 }
 
 
+// Gets the width of a note in the component.
+float MusicStrip::getNoteWidth() const
+{
+    return (float) imageBounds.getWidth() / 14.0;
+}
+
+
+// Gets the height of a beat in the component.
+float MusicStrip::getBeatHeight() const
+{
+    return (float) imageBounds.getHeight() / 32.0;
+}
+    
+
+// Gets the y-coordinate of the first beat in the component.
+float MusicStrip::getBeatTop() const
+{
+    return imageBounds.getY() + (isStart ? getBeatHeight() * 8.0 : 0.0);
+}
+
+
+// Gets the number of beats within this music strip.
+int MusicStrip::getBeatCount() const
+{
+    return (isStart ? 24 : 32);
+}
+
+
 // Updates the internal image size when the strip's bounds change.
 void MusicStrip::resized()
 {
@@ -136,7 +162,8 @@ void MusicStrip::mouseDown(const MouseEvent& event)
     const int beat = getClosestBeat(event.position.y, maxError);
     if (note != -1 && beat != -1)
     {
-        //DBG("note " << note << ", beat " << beat);
+        DBG("note " << note << ", beat " << beat << " clicked, notifying "
+                << listeners.size() << " listeners.");
         for (Listener* listener : listeners)
         {
             listener->noteClicked(this, note, beat);
@@ -150,7 +177,6 @@ void MusicStrip::paint(Graphics& g)
 {   
     /*
     const int noteCount = 15;
-    const int beatCount = (isStart ? 24 : 32);
 
     // draw image bounds for testing:
     g.setColour(Colour(0x55ff0000));
@@ -165,7 +191,7 @@ void MusicStrip::paint(Graphics& g)
 
     // draw beat lines for testing:
     g.setColour(Colour(0xff00ff00));
-    for (int y = 0; y < beatCount; y++)
+    for (int y = 0; y < getBeatCount(); y++)
     {
         g.fillRect(0, getBeatY(y), getWidth(), 1);
     }
@@ -183,32 +209,11 @@ void MusicStrip::paint(Graphics& g)
                 g.setColour(Colour(
                             (uint8) 0xff / noteCount * note,
                             (uint8) 0,
-                            (uint8) 0xff / beatCount * beat,
+                            (uint8) 0xff / getBeatCount() * beat,
                             (uint8) 0xff));
                 g.fillRect(x, y, 1, 1);
             }
         }
     }
     */
-}
-
-
-// Gets the width of a note in the component.
-float MusicStrip::getNoteWidth() const
-{
-    return (float) imageBounds.getWidth() / 14.0;
-}
-
-
-// Gets the height of a beat in the component.
-float MusicStrip::getBeatHeight() const
-{
-    return (float) imageBounds.getHeight() / 32.0;
-}
-    
-
-// Gets the y-coordinate of the first beat in the component.
-float MusicStrip::getBeatTop() const
-{
-    return imageBounds.getY() + (isStart ? getBeatHeight() * 8.0 : 0.0);
 }

@@ -480,4 +480,4 @@ build/intermediate/Debug/MainComponent_a6ffb4a5.o: \
  ../../Source/Layout/Group/Layout_Group_Manager.h \
  ../../Source/Layout/Group/Layout_Group_RelativeLayout.h \
  ../../Source/Layout/Transition/Layout_Transition_Type.h \
- ../../Source/MusicStrip.h
+ ../../Source/MusicStrip.h ../../Source/NoteGrid.h
