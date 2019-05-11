@@ -120,11 +120,6 @@ protected:
 
 private:
     /**
-     * @brief  Transfers colour changes to the internal image component.
-     */
-    virtual void colourChanged() override;
-
-    /**
      * @brief  Changes the button opacity when it is held down.
      *
      * @param graphics           The JUCE graphics context used to draw the

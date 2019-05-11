@@ -1,29 +1,63 @@
-/*
-  ==============================================================================
-
-    This file was auto-generated!
-
-  ==============================================================================
-*/
-
 #include "MainComponent.h"
+#include "Windows_Info.h"
+#include "Assets.h"
 
 //==============================================================================
-MainComponent::MainComponent() 
+MainComponent::MainComponent() :
+notePlayer(deviceManager),
+scrollingPage(notePlayer)
 {
     addAndMakeVisible(scrollingPage);
-    setSize (600, 400);
+    Rectangle<int> displaySize = juce::Desktop::getInstance().getDisplays()
+            .getMainDisplay().userArea;
+    const int width = displaySize.getWidth() / 3;
+    const int height = displaySize.getHeight() * 0.8;
+    setBounds(0, 0, width, height);
+    if (RuntimePermissions::isRequired(RuntimePermissions::recordAudio)
+            && ! RuntimePermissions::isGranted(RuntimePermissions::recordAudio))
+    {
+        RuntimePermissions::request(RuntimePermissions::recordAudio,
+        [this](bool granted) 
+        { 
+            if (granted)
+            {
+                setAudioChannels (0, 1); 
+            }
+        });
+    }
+    else
+    {
+        setAudioChannels (0, 1);
+    }
 }
 
 MainComponent::~MainComponent()
+{ 
+    shutdownAudio();
+}
+
+void MainComponent::prepareToPlay
+(int samplesPerBlockExpected, double sampleRate)
 {
+    notePlayer.prepareToPlay(samplesPerBlockExpected, sampleRate);
+}
+
+void MainComponent::getNextAudioBlock
+(const AudioSourceChannelInfo& bufferToFill)
+{
+    notePlayer.getNextAudioBlock(bufferToFill);
+}
+
+void MainComponent::releaseResources()
+{
+    notePlayer.releaseResources();
 }
 
 //==============================================================================
 void MainComponent::paint (Graphics& g)
 {
-    // (Our component is opaque, so we must completely fill the background with a solid colour)
-    g.fillAll (getLookAndFeel().findColour (ResizableWindow::backgroundColourId));
+    g.setColour(Colour(0xffffffff));
+    g.fillRect(getLocalBounds());
 }
 
 void MainComponent::resized()

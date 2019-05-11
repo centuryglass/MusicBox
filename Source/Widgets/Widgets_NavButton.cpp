@@ -10,7 +10,6 @@ static const constexpr char* dbgPrefix = "Widgets::NavButton::";
 Widgets::NavButton::NavButton(const WindowEdge edge) :
 edge(edge)
 {
-    setColour(Widgets::DrawableImage::imageColour0Id, Colour(0xff000000));
     switch (edge)
     {
         case WindowEdge::up:

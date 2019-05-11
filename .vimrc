@@ -72,7 +72,7 @@ set makeprg=make
 map <F1> <leader>?<cr>
 noremap <F2> :NERDTreeToggle<cr>
 noremap <F3> :YcmCompleter GoTo<cr>
-noremap <F4> :make<cr>
+noremap <F4> :!./build.sh<cr>
 noremap <F7> :Dox<cr>
 noremap <F8> :tabnew<cr>
 map <F11> :set invnumber<cr>

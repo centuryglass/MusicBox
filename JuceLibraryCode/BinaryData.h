@@ -9,10 +9,10 @@
 namespace BinaryData
 {
     extern const char*   downIcon_svg;
-    const int            downIcon_svgSize = 2250;
+    const int            downIcon_svgSize = 2249;
 
     extern const char*   leftIcon_svg;
-    const int            leftIcon_svgSize = 2412;
+    const int            leftIcon_svgSize = 2447;
 
     extern const char*   musicMid_svg;
     const int            musicMid_svgSize = 24460;
@@ -27,10 +27,10 @@ namespace BinaryData
     const int            musicStrip_backup_svgSize = 151948;
 
     extern const char*   rightIcon_svg;
-    const int            rightIcon_svgSize = 2436;
+    const int            rightIcon_svgSize = 2446;
 
     extern const char*   upIcon_svg;
-    const int            upIcon_svgSize = 2227;
+    const int            upIcon_svgSize = 2226;
 
     // Number of elements in the namedResourceList and originalFileNames arrays.
     const int namedResourceListSize = 8;

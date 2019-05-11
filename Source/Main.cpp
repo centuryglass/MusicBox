@@ -10,7 +10,6 @@
 
 #include "../JuceLibraryCode/JuceHeader.h"
 #include "MainComponent.h"
-#include "LookAndFeel.h"
 
 //==============================================================================
 class MusicBoxApplication  : public JUCEApplication
@@ -29,8 +28,6 @@ public:
         // This method is where you should put your application's initialisation code..
 
         mainWindow.reset (new MainWindow (getApplicationName()));
-        lookAndFeel.reset (new MusicBox::LookAndFeel);
-        mainWindow->setLookAndFeel(lookAndFeel.get());
         mainWindow->setContentOwned(new MainComponent, true);
         mainWindow->setVisible(true);
     }
@@ -101,7 +98,6 @@ public:
 
 private:
     std::unique_ptr<MainWindow> mainWindow;
-    std::unique_ptr<MusicBox::LookAndFeel> lookAndFeel;
 };
 
 //==============================================================================

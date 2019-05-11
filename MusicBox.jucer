@@ -2,7 +2,7 @@
 
 <JUCERPROJECT id="YzuRns" name="MusicBox" projectType="guiapp" jucerVersion="5.4.3"
               projectLineFeed="&#10;" reportAppUsage="0" displaySplashScreen="0"
-              headerPath="../../Source&#10;../../Source/Windows&#10;../../Source/Util&#10;../../Source/Layout&#10;../../Source/Layout/Group&#10;../../Source/Layout/Transition&#10;../../Source/Widgets&#10;../../Source/Assets&#10;../../JuceLibraryCode">
+              headerPath="../../Source&#10;../../Source/Windows&#10;../../Source/Util&#10;../../Source/Layout&#10;../../Source/Layout/Group&#10;../../Source/Layout/Transition&#10;../../Source/Widgets&#10;../../Source/Assets&#10;../../JuceLibraryCode&#10;../../Source/Audio">
   <MAINGROUP id="rGX7Oi" name="MusicBox">
     <GROUP id="{2E5C641E-1EFF-A00A-E334-A1C328C3EA7D}" name="Resources">
       <FILE id="zhLZKF" name="downIcon.svg" compile="0" resource="1" file="Assets/NavButton/downIcon.svg"/>
@@ -16,6 +16,13 @@
       <FILE id="UWUQ8D" name="upIcon.svg" compile="0" resource="1" file="Assets/NavButton/upIcon.svg"/>
     </GROUP>
     <GROUP id="{E9075697-5B0E-6F18-67B0-BE03B122384F}" name="Source">
+      <GROUP id="{01CA99AC-3558-D9D7-178B-9A77B0639250}" name="Audio">
+        <FILE id="CLwB56" name="NotePlayer.cpp" compile="1" resource="0" file="Source/Audio/NotePlayer.cpp"/>
+        <FILE id="KCrqox" name="NotePlayer.h" compile="0" resource="0" file="Source/Audio/NotePlayer.h"/>
+        <FILE id="nSQQo0" name="PlaybackTimer.cpp" compile="1" resource="0"
+              file="Source/Audio/PlaybackTimer.cpp"/>
+        <FILE id="qYua0L" name="PlaybackTimer.h" compile="0" resource="0" file="Source/Audio/PlaybackTimer.h"/>
+      </GROUP>
       <GROUP id="{7194DFAB-37CD-645D-3BB1-4BBB9145F1B3}" name="Windows">
         <FILE id="D4Rid1" name="Windows_Alert.cpp" compile="1" resource="0"
               file="Source/Windows/Windows_Alert.cpp"/>
@@ -30,7 +37,6 @@
         <FILE id="kxz9qX" name="Util_ConditionChecker.h" compile="0" resource="0"
               file="Source/Util/Util_ConditionChecker.h"/>
         <FILE id="yTkgFF" name="Util_Math.h" compile="0" resource="0" file="Source/Util/Util_Math.h"/>
-        <FILE id="UJJtbf" name="Util_Nullable.h" compile="0" resource="0" file="Source/Util/Util_Nullable.h"/>
         <FILE id="CQq1UN" name="Util_SafeCall.h" compile="0" resource="0" file="Source/Util/Util_SafeCall.h"/>
         <FILE id="XGoLiC" name="Util_TempTimer.cpp" compile="1" resource="0"
               file="Source/Util/Util_TempTimer.cpp"/>
@@ -54,22 +60,6 @@
               file="Source/Layout/Transition/Layout_Transition_Type.h"/>
       </GROUP>
       <GROUP id="{48357BFF-A667-33CE-6EED-ECBB70382C72}" name="Widgets">
-        <FILE id="vZQqQ6" name="Widgets_BoundedLabel.cpp" compile="0" resource="0"
-              file="Source/Widgets/Widgets_BoundedLabel.cpp"/>
-        <FILE id="gvCQJy" name="Widgets_BoundedLabel.h" compile="0" resource="0"
-              file="Source/Widgets/Widgets_BoundedLabel.h"/>
-        <FILE id="ChnCa2" name="Widgets_ColourPicker.cpp" compile="0" resource="0"
-              file="Source/Widgets/Widgets_ColourPicker.cpp"/>
-        <FILE id="BUHSq8" name="Widgets_ColourPicker.h" compile="0" resource="0"
-              file="Source/Widgets/Widgets_ColourPicker.h"/>
-        <FILE id="BtbgWp" name="Widgets_Counter.cpp" compile="0" resource="0"
-              file="Source/Widgets/Widgets_Counter.cpp"/>
-        <FILE id="z2SUa0" name="Widgets_Counter.h" compile="0" resource="0"
-              file="Source/Widgets/Widgets_Counter.h"/>
-        <FILE id="CuQAfd" name="Widgets_DelayedIconSlider.cpp" compile="0"
-              resource="0" file="Source/Widgets/Widgets_DelayedIconSlider.cpp"/>
-        <FILE id="X7kMwH" name="Widgets_DelayedIconSlider.h" compile="0" resource="0"
-              file="Source/Widgets/Widgets_DelayedIconSlider.h"/>
         <FILE id="g25C4W" name="Widgets_DrawableImage.cpp" compile="1" resource="0"
               file="Source/Widgets/Widgets_DrawableImage.cpp"/>
         <FILE id="puZLP3" name="Widgets_DrawableImage.h" compile="0" resource="0"
@@ -78,54 +68,10 @@
               resource="0" file="Source/Widgets/Widgets_DrawableImageButton.cpp"/>
         <FILE id="rbHNqi" name="Widgets_DrawableImageButton.h" compile="0"
               resource="0" file="Source/Widgets/Widgets_DrawableImageButton.h"/>
-        <FILE id="LfvcsM" name="Widgets_FilePathEditor.cpp" compile="0" resource="0"
-              file="Source/Widgets/Widgets_FilePathEditor.cpp"/>
-        <FILE id="IOpu34" name="Widgets_FilePathEditor.h" compile="0" resource="0"
-              file="Source/Widgets/Widgets_FilePathEditor.h"/>
-        <FILE id="AEyht3" name="Widgets_FocusingPagedList.cpp" compile="0"
-              resource="0" file="Source/Widgets/Widgets_FocusingPagedList.cpp"/>
-        <FILE id="hqkNWV" name="Widgets_FocusingPagedList.h" compile="0" resource="0"
-              file="Source/Widgets/Widgets_FocusingPagedList.h"/>
-        <FILE id="LGwD8o" name="Widgets_IconSlider.cpp" compile="0" resource="0"
-              file="Source/Widgets/Widgets_IconSlider.cpp"/>
-        <FILE id="Z7Jkd9" name="Widgets_IconSlider.h" compile="0" resource="0"
-              file="Source/Widgets/Widgets_IconSlider.h"/>
-        <FILE id="WgVKkT" name="Widgets_LayoutContainer.cpp" compile="0" resource="0"
-              file="Source/Widgets/Widgets_LayoutContainer.cpp"/>
-        <FILE id="Uk7eBd" name="Widgets_LayoutContainer.h" compile="0" resource="0"
-              file="Source/Widgets/Widgets_LayoutContainer.h"/>
-        <FILE id="l8gyt2" name="Widgets_ListEditor.cpp" compile="0" resource="0"
-              file="Source/Widgets/Widgets_ListEditor.cpp"/>
-        <FILE id="R0BHxS" name="Widgets_ListEditor.h" compile="0" resource="0"
-              file="Source/Widgets/Widgets_ListEditor.h"/>
         <FILE id="niY7xW" name="Widgets_NavButton.cpp" compile="1" resource="0"
               file="Source/Widgets/Widgets_NavButton.cpp"/>
         <FILE id="ITOmOW" name="Widgets_NavButton.h" compile="0" resource="0"
               file="Source/Widgets/Widgets_NavButton.h"/>
-        <FILE id="j8uYad" name="Widgets_OverlaySpinner.cpp" compile="0" resource="0"
-              file="Source/Widgets/Widgets_OverlaySpinner.cpp"/>
-        <FILE id="cgffLz" name="Widgets_OverlaySpinner.h" compile="0" resource="0"
-              file="Source/Widgets/Widgets_OverlaySpinner.h"/>
-        <FILE id="xL6oOQ" name="Widgets_PagedList.cpp" compile="0" resource="0"
-              file="Source/Widgets/Widgets_PagedList.cpp"/>
-        <FILE id="oV0HUQ" name="Widgets_PagedList.h" compile="0" resource="0"
-              file="Source/Widgets/Widgets_PagedList.h"/>
-        <FILE id="cIeoUT" name="Widgets_PopupEditor.cpp" compile="0" resource="0"
-              file="Source/Widgets/Widgets_PopupEditor.cpp"/>
-        <FILE id="sxx8pD" name="Widgets_PopupEditor.h" compile="0" resource="0"
-              file="Source/Widgets/Widgets_PopupEditor.h"/>
-        <FILE id="HTmtiP" name="Widgets_Spinner.cpp" compile="0" resource="0"
-              file="Source/Widgets/Widgets_Spinner.cpp"/>
-        <FILE id="slbJhC" name="Widgets_Spinner.h" compile="0" resource="0"
-              file="Source/Widgets/Widgets_Spinner.h"/>
-        <FILE id="xXX12g" name="Widgets_Switch.cpp" compile="0" resource="0"
-              file="Source/Widgets/Widgets_Switch.cpp"/>
-        <FILE id="er4wAz" name="Widgets_Switch.h" compile="0" resource="0"
-              file="Source/Widgets/Widgets_Switch.h"/>
-        <FILE id="rjYvwM" name="Widgets_TextEditor.cpp" compile="0" resource="0"
-              file="Source/Widgets/Widgets_TextEditor.cpp"/>
-        <FILE id="EmambL" name="Widgets_TextEditor.h" compile="0" resource="0"
-              file="Source/Widgets/Widgets_TextEditor.h"/>
       </GROUP>
       <GROUP id="{CEE725A0-8411-7871-071F-ED6A3F35B57D}" name="Assets">
         <FILE id="knJowW" name="Assets.cpp" compile="1" resource="0" file="Source/Assets/Assets.cpp"/>
@@ -135,10 +81,10 @@
         <FILE id="rWYctV" name="Assets_JSONFile.h" compile="0" resource="0"
               file="Source/Assets/Assets_JSONFile.h"/>
       </GROUP>
+      <FILE id="SiLWXx" name="MusicFile.cpp" compile="1" resource="0" file="Source/MusicFile.cpp"/>
+      <FILE id="KdYYdm" name="MusicFile.h" compile="0" resource="0" file="Source/MusicFile.h"/>
       <FILE id="oquAHH" name="NoteGrid.cpp" compile="1" resource="0" file="Source/NoteGrid.cpp"/>
       <FILE id="UcpxGo" name="NoteGrid.h" compile="0" resource="0" file="Source/NoteGrid.h"/>
-      <FILE id="fB8eun" name="LookAndFeel.cpp" compile="1" resource="0" file="Source/LookAndFeel.cpp"/>
-      <FILE id="ccNEnl" name="LookAndFeel.h" compile="0" resource="0" file="Source/LookAndFeel.h"/>
       <FILE id="zI9SAM" name="MainComponent.h" compile="0" resource="0" file="Source/MainComponent.h"/>
       <FILE id="NBGzoq" name="MainComponent.cpp" compile="1" resource="0"
             file="Source/MainComponent.cpp"/>
@@ -162,13 +108,12 @@
         <MODULEPATH id="juce_audio_formats" path="../../../../../opt/JUCE/modules"/>
         <MODULEPATH id="juce_audio_processors" path="../../../../../opt/JUCE/modules"/>
         <MODULEPATH id="juce_core" path="../../../../../opt/JUCE/modules"/>
-        <MODULEPATH id="juce_cryptography" path="../../../../../opt/JUCE/modules"/>
         <MODULEPATH id="juce_data_structures" path="../../../../../opt/JUCE/modules"/>
         <MODULEPATH id="juce_events" path="../../../../../opt/JUCE/modules"/>
         <MODULEPATH id="juce_graphics" path="../../../../../opt/JUCE/modules"/>
         <MODULEPATH id="juce_gui_basics" path="../../../../../opt/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_utils" path="../../../../../opt/JUCE/modules"/>
         <MODULEPATH id="juce_gui_extra" path="../../../../../opt/JUCE/modules"/>
-        <MODULEPATH id="juce_opengl" path="../../../../../opt/JUCE/modules"/>
       </MODULEPATHS>
     </XCODE_MAC>
     <LINUX_MAKE targetFolder="Builds/LinuxMakefile">
@@ -182,13 +127,12 @@
         <MODULEPATH id="juce_audio_formats" path="../../../../../opt/JUCE/modules"/>
         <MODULEPATH id="juce_audio_processors" path="../../../../../opt/JUCE/modules"/>
         <MODULEPATH id="juce_core" path="../../../../../opt/JUCE/modules"/>
-        <MODULEPATH id="juce_cryptography" path="../../../../../opt/JUCE/modules"/>
         <MODULEPATH id="juce_data_structures" path="../../../../../opt/JUCE/modules"/>
         <MODULEPATH id="juce_events" path="../../../../../opt/JUCE/modules"/>
         <MODULEPATH id="juce_graphics" path="../../../../../opt/JUCE/modules"/>
         <MODULEPATH id="juce_gui_basics" path="../../../../../opt/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_utils" path="../../../../../opt/JUCE/modules"/>
         <MODULEPATH id="juce_gui_extra" path="../../../../../opt/JUCE/modules"/>
-        <MODULEPATH id="juce_opengl" path="../../../../../opt/JUCE/modules"/>
       </MODULEPATHS>
     </LINUX_MAKE>
   </EXPORTFORMATS>
@@ -197,14 +141,13 @@
     <MODULE id="juce_audio_devices" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
     <MODULE id="juce_audio_formats" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
     <MODULE id="juce_audio_processors" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_utils" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
     <MODULE id="juce_core" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
-    <MODULE id="juce_cryptography" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
     <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
     <MODULE id="juce_events" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
     <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
     <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
     <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
-    <MODULE id="juce_opengl" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
   </MODULES>
   <LIVE_SETTINGS>
     <LINUX buildEnabled="1"/>

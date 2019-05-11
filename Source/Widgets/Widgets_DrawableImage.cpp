@@ -7,8 +7,6 @@
 static const constexpr char* dbgPrefix = "Widgets::DrawableImage::";
 #endif
 
-// Default colour values to replace with custom image colours:
-static juce::Array<juce::Colour> defaultColours;
 
 // Creates a DrawableImage using an image file path.
 Widgets::DrawableImage::DrawableImage
@@ -51,23 +49,10 @@ Widgets::DrawableImage::DrawableImage
 (const juce::RectanglePlacement placement) :
 placement(placement)
 {
-    setColour(Widgets::DrawableImage::imageColour0Id, Colour(0xffffffff));
-    setColour(Widgets::DrawableImage::imageColour1Id, Colour(0xff000000));
-    setColour(Widgets::DrawableImage::imageColour2Id, Colour(0xffff0000));
-    setColour(Widgets::DrawableImage::imageColour3Id, Colour(0xff00ff00));
-    setColour(Widgets::DrawableImage::imageColour4Id, Colour(0xff0000ff));
-#    if JUCE_DEBUG
+    #if JUCE_DEBUG
     setName("Widgets::DrawableImage");
-#    endif
+    #endif
     setInterceptsMouseClicks(false, false);
-    if (defaultColours.isEmpty())
-    {
-        defaultColours.add(Colour(0xffffffff));
-        defaultColours.add(Colour(0xff000000));
-        defaultColours.add(Colour(0xffff0000));
-        defaultColours.add(Colour(0xff00ff00));
-        defaultColours.add(Colour(0xff0000ff));
-    }
 }
 
 
@@ -139,16 +124,6 @@ bool Widgets::DrawableImage::isEmpty()
 }
 
 
-// Reloads the image and applies the new colour values.
-void Widgets::DrawableImage::colourChanged()
-{
-    if (imageSource.existsAsFile())
-    {
-        setImage(imageSource);
-    }
-}
-
-
 // Adjusts image size and placement whenever component size changes.
 void Widgets::DrawableImage::resized()
 {
@@ -169,66 +144,4 @@ void Widgets::DrawableImage::initImage()
     }
     addAndMakeVisible(imageDrawable.get());
     imageDrawable->setTransformToFit(getLocalBounds().toFloat(), placement);
-
-    // Load image colours that will replace the defaults:
-    using juce::Colour;
-    juce::Array<Colour> imageColours;
-    bool replacementFound = false;
-    for (int i = 0; i < defaultColours.size(); i++)
-    {
-        juce::Colour newColour = findColour(imageColour0Id + i);
-        if (!replacementFound && newColour != defaultColours[i])
-        {
-            replacementFound = true;
-        }
-        imageColours.add(newColour);
-    }
-    if (!replacementFound)
-    {
-        return;  // No colours changed, no other actions are needed.
-    }
-
-    // Map temporary replacement colours to the values they're replacing:
-    using juce::uint32;
-    std::map<uint32, uint32> tempColours;
-    for (int i = 0; i < defaultColours.size(); i++)
-    {
-        const int colourId = imageColour0Id + i;
-        //  Let i and j be colour indices where j > i. If colour[i] is changing
-        // from a to b, and colour[j] is changing from b to c, set colour[i] to
-        // some temporary value so that in the end we get colour[i] = b,
-        // colour[j] = c and not colour[i] = c,  colour[j] = c
-        // (unless b equals c).
-
-        // TLDR: Prevent conflicts if one of the new colours is also a default
-        //       colour.
-        const int existingIndex = defaultColours.indexOf(imageColours[i]);
-        if (existingIndex < i)
-        {
-            //  Colour conflict doesn't exist, or involves a colour that has
-            // already been changed, so direct replacement is possible.
-            imageDrawable->replaceColour(defaultColours[i], imageColours[i]);
-        }
-        else if (existingIndex > i)
-        {
-            //  Colour conflict exists, replace the colour with a temporary
-            //  colour that's not already in use.
-            Colour tempColour = juce::Colour(0x0);
-            while (defaultColours.contains(tempColour)
-                    || imageColours.contains(tempColour)
-                    || tempColours.count(tempColour.getARGB()) != 0)
-            {
-                tempColour = Colour(tempColour.getARGB() + 1);
-            }
-            tempColours[tempColour.getARGB()] = imageColours[i].getARGB();
-            imageDrawable->replaceColour(defaultColours[i], tempColour);
-        }
-        // If existingIndex == i, the colour doesn't change, so no action is
-        // needed.
-    }
-    // Temporary colours can now be safely replaced with their actual values.
-    for (auto it = tempColours.begin(); it != tempColours.end(); it++)
-    {
-        imageDrawable->replaceColour(Colour(it->first), Colour(it->second));
-    }
 }

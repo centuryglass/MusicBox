@@ -290,7 +290,7 @@ void Layout::Transition::Animator::transformBounds(
             toAnimate = static_cast<Component*>(proxy);
         }
         juce::Desktop::getInstance().getAnimator().animateComponent(toAnimate,
-                destination, 1.0, animationMilliseconds, false, 0.2, 1.0);
+                destination, 1.0, animationMilliseconds, false, 1.0, 1.0);
     }
     if (onFinish)
     {

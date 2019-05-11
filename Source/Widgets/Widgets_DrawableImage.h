@@ -20,27 +20,6 @@ class Widgets::DrawableImage: public juce::Component
 {
 public:
     /**
-     * @brief  ColourId values corresponding to the colours set in
-     *         loadDefaultColours.
-     *
-     *  By using setColour(imageColourNId, newColour), any part of the image
-     * with the same colour as defaultColours[N] will have its colour changed to
-     * newColour.
-     *
-     *  When changing colours, potential colour conflicts are checked for and
-     * averted, so you can safely do things like set imageColour0Id to
-     * defaultColours[3], and then set imageColour3Id to some new colour
-     * without also changing the areas set by imageColour0Id.
-     */
-    enum ColourIds {
-        imageColour0Id = 0x1900000,
-        imageColour1Id = 0x1900001,
-        imageColour2Id = 0x1900002,
-        imageColour3Id = 0x1900003,
-        imageColour4Id = 0x1900004
-    };
-
-    /**
      * @brief  Creates a DrawableImage using an image file path.
      *
      * @param assetFilename  The filename of an image in the asset folder, or a
@@ -149,11 +128,6 @@ public:
      *          pixels.
      */
     bool isEmpty();
-
-    /**
-     * @brief  Reloads the image and applies the new colour values.
-     */
-    virtual void colourChanged() override;
 
 protected:
     /**

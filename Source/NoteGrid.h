@@ -40,17 +40,22 @@ public:
      * @param note  The note value to toggle.
      *
      * @param beat  The beat containing the note to toggle.
+     *
+     * @return      True if and only if a note was added.
      */
-    void toggleNote(const int note, const int beat);
+    bool toggleNote(const int note, const int beat);
 
     /**
      * @brief  Gets all notes at a specific beat.
      *
-     * @param beat  The beat to access.
+     * @param beat       The beat to access.
      *
-     * @return      All notes at the given beat.
+     * @param highlight  If true, notes at the accessed beat will be highlighted
+     *                   briefly when drawing the NoteGrid.
+     *
+     * @return           All notes at the given beat.
      */
-    Array<int> getNotes(const int beat);
+    Array<int> getNotes(const int beat, const bool highlight = false);
 
     /**
      * @brief  Sets the scale used to convert beat and note indices to 
@@ -62,6 +67,37 @@ public:
      */
     void setScale(const float noteWidth, const float beatHeight);
 
+    /**
+     * @brief  Gets the length of the entire collection of stored notes in
+     *         beats.
+     *
+     * @return  The number of beats it would take to completely play back the
+     *          stored notes, plus one.
+     */
+    int getBeatCount() const;
+
+    /**
+     * @brief  Gets all notes stored in the note grid.
+     *
+     * @return  A copy of the grid's note map, mapping each beat number to the
+     *          list of notes played on that beat.
+     */
+    std::map<int, Array<int>> getNoteMap() const;
+
+    /**
+     * @brief  Checks if this NoteGrid contains any data.
+     *
+     * @return  Whether the NoteGrid currently contains no notes.
+     */
+    bool isEmpty() const;
+
+    /**
+     * @brief  Removes all note data from the NoteGrid.
+     */
+    void clear();
+
+    // Number of pixels between the upper bounds and the first note.
+    static const constexpr int gridOffset = 15;
 private:
     /**
      * @brief  Draws all notes in the grid.
@@ -76,4 +112,6 @@ private:
     float beatHeight = 0;
     // Maps each beat to the list of all notes in that beat.
     std::map<int, Array<int>> noteMap;
+
+    std::map<int, Colour> beatColors;
 };

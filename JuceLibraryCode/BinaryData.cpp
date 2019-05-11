@@ -25,8 +25,8 @@ static const unsigned char temp_binary_data_0[] =
 "   width=\"85.571327\"\n"
 "   height=\"40.810989\"\n"
 "   viewBox=\"0 0 85.571327 40.810989\"\n"
-"   sodipodi:docname=\"pageDownIcon.svg\"\n"
-"   inkscape:version=\"0.92.2 5c3e80d, 2017-08-06\">\n"
+"   sodipodi:docname=\"downIcon.svg\"\n"
+"   inkscape:version=\"0.92.4 5da689c313, 2019-01-14\">\n"
 "  <metadata\n"
 "     id=\"metadata8\">\n"
 "    <rdf:RDF>\n"
@@ -63,7 +63,7 @@ static const unsigned char temp_binary_data_0[] =
 "     inkscape:window-maximized=\"0\"\n"
 "     inkscape:current-layer=\"svg2\" />\n"
 "  <path\n"
-"     style=\"opacity:1;fill:#ffffff;fill-opacity:1;stroke-width:0.86531407\"\n"
+"     style=\"opacity:1;fill:#000000;fill-opacity:1;stroke-width:0.86531407\"\n"
 "     d=\"m 3.2290199,0.00844775 c -0.884381,0.06184 -1.744728,0.462456 -2.37500003,1.18749995 -1.260543,1.45009 -1.108293,3.632035 0.34179703,4.892578 L 40.168473,39.965477 c 0.75268,0.6543 1.70128,0.91912 2.61719,0.82813 0.9159,0.09099 1.8645,-0.173"
 "83 2.61719,-0.82813 L 84.375508,6.0885257 c 1.45009,-1.260543 1.60234,-3.442488 0.3418,-4.892578 -1.26055,-1.45008895 -3.44249,-1.60233995 -4.89258,-0.34179695 L 42.785663,33.049467 5.7465979,0.85415075 c -0.725045,-0.630271 -1.633197,-0.907545 -2.51"
 "7578,-0.845703 z\"\n"
@@ -91,8 +91,8 @@ static const unsigned char temp_binary_data_1[] =
 "   width=\"128\"\n"
 "   height=\"128\"\n"
 "   viewBox=\"0 0 128 128\"\n"
-"   sodipodi:docname=\"backIcon.svg\"\n"
-"   inkscape:version=\"0.92.2 2405546, 2018-03-11\">\n"
+"   sodipodi:docname=\"leftIcon.svg\"\n"
+"   inkscape:version=\"0.92.4 5da689c313, 2019-01-14\">\n"
 "  <metadata\n"
 "     id=\"metadata254\">\n"
 "    <rdf:RDF>\n"
@@ -101,7 +101,7 @@ static const unsigned char temp_binary_data_1[] =
 "        <dc:format>image/svg+xml</dc:format>\n"
 "        <dc:type\n"
 "           rdf:resource=\"http://purl.org/dc/dcmitype/StillImage\" />\n"
-"        <dc:title></dc:title>\n"
+"        <dc:title />\n"
 "      </cc:Work>\n"
 "    </rdf:RDF>\n"
 "  </metadata>\n"
@@ -122,21 +122,22 @@ static const unsigned char temp_binary_data_1[] =
 "     showgrid=\"false\"\n"
 "     inkscape:pagecheckerboard=\"true\"\n"
 "     inkscape:zoom=\"4.22\"\n"
-"     inkscape:cx=\"22.886256\"\n"
+"     inkscape:cx=\"-17.398104\"\n"
 "     inkscape:cy=\"62.218715\"\n"
 "     inkscape:window-x=\"0\"\n"
 "     inkscape:window-y=\"0\"\n"
 "     inkscape:window-maximized=\"1\"\n"
 "     inkscape:current-layer=\"svg248\" />\n"
 "  <g\n"
-"     id=\"g317\">\n"
+"     id=\"g317\"\n"
+"     transform=\"translate(0,0.9478673)\">\n"
 "    <path\n"
 "       inkscape:connector-curvature=\"0\"\n"
 "       id=\"rect258\"\n"
 "       d=\"M 79.663109,21.121075 C 75.821942,21.098952 73.7588,24.700772 71.179829,26.961777 58.871522,39.270085 46.563214,51.578392 34.254906,63.8867 c 13.79813,13.76723 27.535999,27.597817 41.371853,41.32539 3.65571,3.29436 10.172596,0.54988 10.412"
 "151,-4.35243 0.488111,-3.982565 -3.19428,-6.24072 -5.527648,-8.813777 C 71.122923,82.660943 61.739168,73.27142 52.350609,63.8867 63.103549,53.106183 73.915711,42.38179 84.629073,31.563638 88.082505,27.599343 84.917129,20.96579 79.663109,21.121075 Z\""
 "\n"
-"       style=\"opacity:1;fill:#ffffff;fill-opacity:1\" />\n"
+"       style=\"opacity:1;fill:#000000;fill-opacity:1\" />\n"
 "    <rect\n"
 "       y=\"-6.4392935e-15\"\n"
 "       x=\"0\"\n"
@@ -5530,8 +5531,8 @@ static const unsigned char temp_binary_data_6[] =
 "   width=\"128\"\n"
 "   height=\"128\"\n"
 "   viewBox=\"0 0 128 128\"\n"
-"   sodipodi:docname=\"nextIcon.svg\"\n"
-"   inkscape:version=\"0.92.2 5c3e80d, 2017-08-06\">\n"
+"   sodipodi:docname=\"rightIcon.svg\"\n"
+"   inkscape:version=\"0.92.4 5da689c313, 2019-01-14\">\n"
 "  <metadata\n"
 "     id=\"metadata254\">\n"
 "    <rdf:RDF>\n"
@@ -5561,7 +5562,7 @@ static const unsigned char temp_binary_data_6[] =
 "     showgrid=\"false\"\n"
 "     inkscape:pagecheckerboard=\"true\"\n"
 "     inkscape:zoom=\"4.22\"\n"
-"     inkscape:cx=\"64\"\n"
+"     inkscape:cx=\"23.71564\"\n"
 "     inkscape:cy=\"62.218715\"\n"
 "     inkscape:window-x=\"0\"\n"
 "     inkscape:window-y=\"0\"\n"
@@ -5576,7 +5577,7 @@ static const unsigned char temp_binary_data_6[] =
 "       d=\"M 79.663109,21.121075 C 75.821942,21.098952 73.7588,24.700772 71.179829,26.961777 58.871522,39.270085 46.563214,51.578392 34.254906,63.8867 c 13.79813,13.76723 27.535999,27.597817 41.371853,41.32539 3.65571,3.29436 10.172596,0.54988 10.412"
 "151,-4.35243 0.488111,-3.982565 -3.19428,-6.24072 -5.527648,-8.813777 C 71.122923,82.660943 61.739168,73.27142 52.350609,63.8867 63.103549,53.106183 73.915711,42.38179 84.629073,31.563638 88.082505,27.599343 84.917129,20.96579 79.663109,21.121075 Z\""
 "\n"
-"       style=\"opacity:1;fill:#ffffff;fill-opacity:1\" />\n"
+"       style=\"opacity:1;fill:#000000;fill-opacity:1\" />\n"
 "    <rect\n"
 "       y=\"-6.4392935e-15\"\n"
 "       x=\"0\"\n"
@@ -5607,8 +5608,8 @@ static const unsigned char temp_binary_data_7[] =
 "   width=\"85.57132\"\n"
 "   height=\"40.810989\"\n"
 "   viewBox=\"0 0 85.57132 40.810989\"\n"
-"   sodipodi:docname=\"pageUpIcon.svg\"\n"
-"   inkscape:version=\"0.92.2 5c3e80d, 2017-08-06\">\n"
+"   sodipodi:docname=\"upIcon.svg\"\n"
+"   inkscape:version=\"0.92.4 5da689c313, 2019-01-14\">\n"
 "  <metadata\n"
 "     id=\"metadata8\">\n"
 "    <rdf:RDF>\n"
@@ -5638,14 +5639,14 @@ static const unsigned char temp_binary_data_7[] =
 "     showgrid=\"false\"\n"
 "     inkscape:pagecheckerboard=\"true\"\n"
 "     inkscape:zoom=\"2.990248\"\n"
-"     inkscape:cx=\"-92.271455\"\n"
+"     inkscape:cx=\"-149.12293\"\n"
 "     inkscape:cy=\"-23.277883\"\n"
 "     inkscape:window-x=\"0\"\n"
 "     inkscape:window-y=\"0\"\n"
 "     inkscape:window-maximized=\"1\"\n"
 "     inkscape:current-layer=\"svg2\" />\n"
 "  <path\n"
-"     style=\"opacity:1;fill:#ffffff;fill-opacity:1;stroke-width:0.86531407\"\n"
+"     style=\"opacity:1;fill:#000000;fill-opacity:1;stroke-width:0.86531407\"\n"
 "     d=\"m 3.2290199,40.80254 c -0.884381,-0.0618 -1.744728,-0.46246 -2.375,-1.1875 -1.26054304,-1.45009 -1.10829304,-3.63203 0.341797,-4.89258 L 40.168473,0.84551165 c 0.752682,-0.6543 1.701284,-0.91912 2.617188,-0.82813 0.915904,-0.09099 1.864506,0"
 ".17383 2.617187,0.82813 L 84.375506,34.72246 c 1.45009,1.26055 1.60234,3.44249 0.3418,4.89258 -1.26055,1.45009 -3.44249,1.60234 -4.89258,0.3418 L 42.785661,7.7615217 5.7465979,39.95684 c -0.725045,0.63027 -1.633197,0.90754 -2.517578,0.8457 z\"\n"
 "     id=\"rect12\"\n"
@@ -5665,14 +5666,14 @@ const char* getNamedResource (const char* resourceNameUTF8, int& numBytes)
 
     switch (hash)
     {
-        case 0xabfd0c60:  numBytes = 2250; return downIcon_svg;
-        case 0x595552c5:  numBytes = 2412; return leftIcon_svg;
+        case 0xabfd0c60:  numBytes = 2249; return downIcon_svg;
+        case 0x595552c5:  numBytes = 2447; return leftIcon_svg;
         case 0xae679608:  numBytes = 24460; return musicMid_svg;
         case 0x24defc62:  numBytes = 48707; return musicStart_svg;
         case 0x9894f018:  numBytes = 151948; return musicStrip_svg;
         case 0x184fee33:  numBytes = 151948; return musicStrip_backup_svg;
-        case 0x8af58fda:  numBytes = 2436; return rightIcon_svg;
-        case 0x5b64ed59:  numBytes = 2227; return upIcon_svg;
+        case 0x8af58fda:  numBytes = 2446; return rightIcon_svg;
+        case 0x5b64ed59:  numBytes = 2226; return upIcon_svg;
         default: break;
     }
 

@@ -422,13 +422,19 @@ build/intermediate/Debug/Layout_Group_RelativeLayout_307ff71f.o: \
  /opt/JUCE/modules/juce_audio_processors/utilities/juce_AudioParameterBool.h \
  /opt/JUCE/modules/juce_audio_processors/utilities/juce_AudioParameterChoice.h \
  /opt/JUCE/modules/juce_audio_processors/utilities/juce_AudioProcessorValueTreeState.h \
- /opt/JUCE/modules/juce_cryptography/juce_cryptography.h \
- /opt/JUCE/modules/juce_cryptography/encryption/juce_BlowFish.h \
- /opt/JUCE/modules/juce_cryptography/encryption/juce_Primes.h \
- /opt/JUCE/modules/juce_cryptography/encryption/juce_RSAKey.h \
- /opt/JUCE/modules/juce_cryptography/hashing/juce_MD5.h \
- /opt/JUCE/modules/juce_cryptography/hashing/juce_SHA256.h \
- /opt/JUCE/modules/juce_cryptography/hashing/juce_Whirlpool.h \
+ /opt/JUCE/modules/juce_audio_utils/juce_audio_utils.h \
+ /opt/JUCE/modules/juce_audio_utils/gui/juce_AudioDeviceSelectorComponent.h \
+ /opt/JUCE/modules/juce_audio_utils/gui/juce_AudioThumbnailBase.h \
+ /opt/JUCE/modules/juce_audio_utils/gui/juce_AudioThumbnail.h \
+ /opt/JUCE/modules/juce_audio_utils/gui/juce_AudioThumbnailCache.h \
+ /opt/JUCE/modules/juce_audio_utils/gui/juce_AudioVisualiserComponent.h \
+ /opt/JUCE/modules/juce_audio_utils/gui/juce_MidiKeyboardComponent.h \
+ /opt/JUCE/modules/juce_audio_utils/gui/juce_AudioAppComponent.h \
+ /opt/JUCE/modules/juce_audio_utils/gui/juce_BluetoothMidiDevicePairingDialogue.h \
+ /opt/JUCE/modules/juce_audio_utils/players/juce_SoundPlayer.h \
+ /opt/JUCE/modules/juce_audio_utils/players/juce_AudioProcessorPlayer.h \
+ /opt/JUCE/modules/juce_audio_utils/audio_cd/juce_AudioCDBurner.h \
+ /opt/JUCE/modules/juce_audio_utils/audio_cd/juce_AudioCDReader.h \
  /opt/JUCE/modules/juce_gui_extra/juce_gui_extra.h \
  /opt/JUCE/modules/juce_gui_extra/documents/juce_FileBasedDocument.h \
  /opt/JUCE/modules/juce_gui_extra/code_editor/juce_CodeDocument.h \
@@ -456,21 +462,4 @@ build/intermediate/Debug/Layout_Group_RelativeLayout_307ff71f.o: \
  /opt/JUCE/modules/juce_gui_extra/misc/juce_WebBrowserComponent.h \
  /opt/JUCE/modules/juce_gui_extra/misc/juce_LiveConstantEditor.h \
  /opt/JUCE/modules/juce_gui_extra/misc/juce_AnimatedAppComponent.h \
- /opt/JUCE/modules/juce_opengl/juce_opengl.h \
- /opt/JUCE/modules/juce_opengl/geometry/juce_Vector3D.h \
- /opt/JUCE/modules/juce_opengl/geometry/juce_Matrix3D.h \
- /opt/JUCE/modules/juce_opengl/geometry/juce_Quaternion.h \
- /opt/JUCE/modules/juce_opengl/geometry/juce_Draggable3DOrientation.h \
- /opt/JUCE/modules/juce_opengl/native/juce_MissingGLDefinitions.h \
- /opt/JUCE/modules/juce_opengl/opengl/juce_OpenGLHelpers.h \
- /opt/JUCE/modules/juce_opengl/opengl/juce_OpenGLPixelFormat.h \
- /opt/JUCE/modules/juce_opengl/native/juce_OpenGLExtensions.h \
- /opt/JUCE/modules/juce_opengl/opengl/juce_OpenGLRenderer.h \
- /opt/JUCE/modules/juce_opengl/opengl/juce_OpenGLContext.h \
- /opt/JUCE/modules/juce_opengl/opengl/juce_OpenGLFrameBuffer.h \
- /opt/JUCE/modules/juce_opengl/opengl/juce_OpenGLGraphicsContext.h \
- /opt/JUCE/modules/juce_opengl/opengl/juce_OpenGLImage.h \
- /opt/JUCE/modules/juce_opengl/opengl/juce_OpenGLShaderProgram.h \
- /opt/JUCE/modules/juce_opengl/opengl/juce_OpenGLTexture.h \
- /opt/JUCE/modules/juce_opengl/utils/juce_OpenGLAppComponent.h \
  ../../JuceLibraryCode/BinaryData.h
