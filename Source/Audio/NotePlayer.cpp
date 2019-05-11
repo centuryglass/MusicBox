@@ -1,24 +1,23 @@
 #include "NotePlayer.h"
 #include "Assets.h"
 
-static const String samplePrefix = "ubikphonik_music-box-samples/";
 static const StringArray samples =
 {
-    "177947__ubikphonik__ab1.aiff",
-    "177944__ubikphonik__bb1.aiff",
-    "177948__ubikphonik__c1.aiff",
-    "177950__ubikphonik__db1.aiff",
-    "177954__ubikphonik__eb1.aiff",
-    "177943__ubikphonik__f1.aiff",
-    "177941__ubikphonik__g1.aiff",
-    "177946__ubikphonik__ab2.aiff",
-    "177949__ubikphonik__bb2.aiff",
-    "177951__ubikphonik__c2.aiff",
-    "177952__ubikphonik__db2.aiff",
-    "177953__ubikphonik__eb2.aiff",
-    "177942__ubikphonik__f2.aiff",
-    "177940__ubikphonik__g2.aiff",
-    "177945__ubikphonik__ab3.aiff"
+    "_177947__ubikphonik__ab1_aiff",
+    "_177944__ubikphonik__bb1_aiff",
+    "_177948__ubikphonik__c1_aiff",
+    "_177950__ubikphonik__db1_aiff",
+    "_177954__ubikphonik__eb1_aiff",
+    "_177943__ubikphonik__f1_aiff",
+    "_177941__ubikphonik__g1_aiff",
+    "_177946__ubikphonik__ab2_aiff",
+    "_177949__ubikphonik__bb2_aiff",
+    "_177951__ubikphonik__c2_aiff",
+    "_177952__ubikphonik__db2_aiff",
+    "_177953__ubikphonik__eb2_aiff",
+    "_177942__ubikphonik__f2_aiff",
+    "_177940__ubikphonik__g2_aiff",
+    "_177945__ubikphonik__ab3_aiff"
 };
 
 NotePlayer::NotePlayer(AudioDeviceManager& deviceManager) :
@@ -28,7 +27,7 @@ NotePlayer::NotePlayer(AudioDeviceManager& deviceManager) :
     formatManager.registerBasicFormats();
     for (const String& sample : samples)
     {
-        File audioFile = Assets::findAssetFile(samplePrefix + sample);
+        File audioFile = Assets::findAssetFile(sample);
         AudioFormatReader* noteReader 
                 = formatManager.createReaderFor(audioFile);
         if (noteReader != nullptr)

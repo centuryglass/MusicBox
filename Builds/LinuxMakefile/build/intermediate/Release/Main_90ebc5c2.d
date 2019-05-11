@@ -470,4 +470,5 @@ build/intermediate/Release/Main_90ebc5c2.o: ../../Source/Main.cpp \
  ../../Source/Layout/Group/Layout_Group_RelativeLayout.h \
  ../../Source/Layout/Transition/Layout_Transition_Type.h \
  ../../Source/MusicStrip.h ../../Source/NoteGrid.h \
- ../../Source/Audio/NotePlayer.h ../../Source/Audio/PlaybackTimer.h
+ ../../Source/Audio/NotePlayer.h ../../Source/Audio/PlaybackTimer.h \
+ ../../Source/Assets/Assets.h

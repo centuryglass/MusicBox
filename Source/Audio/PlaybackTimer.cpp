@@ -58,6 +58,6 @@ void PlaybackTimer::timerCallback()
 
 int PlaybackTimer::msFromBPM(const int bpm)
 {
-    return 36000 / bpm;
+    return 36000 / bpm / 2;
 }
 

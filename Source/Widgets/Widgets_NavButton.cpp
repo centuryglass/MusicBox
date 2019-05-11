@@ -13,16 +13,16 @@ edge(edge)
     switch (edge)
     {
         case WindowEdge::up:
-            setImage("NavButton/upIcon.svg");
+            setImage("upIcon_svg");
             break;
         case WindowEdge::down:
-            setImage("NavButton/downIcon.svg");
+            setImage("downIcon_svg");
             break;
         case WindowEdge::left:
-            setImage("NavButton/leftIcon.svg");
+            setImage("leftIcon_svg");
             break;
         case WindowEdge::right:
-            setImage("NavButton/rightIcon.svg");
+            setImage("rightIcon_svg");
     }
     setWantsKeyboardFocus(false);
 }

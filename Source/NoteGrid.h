@@ -58,6 +58,11 @@ public:
     Array<int> getNotes(const int beat, const bool highlight = false);
 
     /**
+     * @brief  Removes all playback highlighting.
+     */
+    void resetHighlighting();
+
+    /**
      * @brief  Sets the scale used to convert beat and note indices to 
      *         points within the component.
      *

@@ -11,6 +11,20 @@
 namespace Assets
 {
     /**
+     * @brief  Loads a temporary file from a binary resource.
+     *
+     * @param fileName  The name of the resource.
+     *
+     * @return           Resource data loaded as a file object.
+     */
+    File createBinaryTempFile(const String fileName);
+
+    /**
+     * @brief  Removes and deletes all temporary files created from binary data.
+     */
+    void clearTempCache();
+
+    /**
      * @brief  Loads an asset file using its asset name.
      *
      * @param assetName          The name of a file in the asset folder.

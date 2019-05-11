@@ -5,6 +5,7 @@
 #include <map>
 
 static const constexpr int animationMS = 200;
+static const constexpr int defaultBPM = 120;
 
 
 // Initializes the component layout and creates the first music strips.
@@ -84,8 +85,8 @@ playbackTimer(notePlayer)
     bpmEditor.setColour(TextEditor::backgroundColourId, Colour(0xffffffff));
     bpmEditor.setJustification(Justification::centred);
 
-    bpmEditor.setInputRestrictions(3, "0123456789");
-    bpmEditor.setText("60");
+    bpmEditor.setInputRestrictions(4, "0123456789");
+    bpmEditor.setText(String(defaultBPM));
 
 
     // Initialize NavButtons
@@ -132,10 +133,15 @@ playbackTimer(notePlayer)
 // Passes all page button actions on to the appropriate functions.
 void ScrollingPage::buttonClicked(Button* button)
 {
-    std::map<Button*, std::function<void()>> actionMap =
+    const auto scrollAction = [this](const float offset)
     {
-        { &upButton,    [this]() { changeStripPosition(-0.25); } },
-        { &downButton,  [this]() { changeStripPosition(0.25); } },
+        changeStripPosition(offset);
+        noteGrid.resetHighlighting();
+    };
+    const std::map<Button*, std::function<void()>> actionMap =
+    {
+        { &upButton,    [this, scrollAction]() { scrollAction(-0.25); } },
+        { &downButton,  [this, scrollAction]() { scrollAction(0.25); } },
         { &clearButton, [this]() { clearData(); } },
         { &saveButton,  [this]() { saveData(); } },
         { &loadButton,  [this]() { loadData(); } }, 
@@ -148,13 +154,12 @@ void ScrollingPage::buttonClicked(Button* button)
                 }
                 else
                 {
-                    playbackTimer.stopPlayback();
-                    scrollToCurrentPos();
+                    stopPlayback();
                 }
             }
         },
     };
-    actionMap[button]();
+    actionMap.at(button)();
 }
 
 
@@ -163,8 +168,8 @@ void ScrollingPage::noteClicked(MusicStrip* strip, const int note,
         const int beat) 
 {
     const int stripIndex = musicStrips.indexOf(strip);
-    DBG("Clicked note " << note << ", beat " << beat << " in strip "
-            << stripIndex);
+    // DBG("Clicked note " << note << ", beat " << beat << " in strip "
+    //        << stripIndex);
     if (stripIndex < 0)
     {
         jassertfalse;
@@ -188,7 +193,7 @@ void ScrollingPage::startPlayback()
     int bpm = bpmEditor.getText().getIntValue();
     if (bpm <= 0)
     {
-        bpm = 60;
+        bpm = defaultBPM;
     }
     // Move to the start of the strip sequence:
     float cachedStripNum = stripNum;
@@ -208,19 +213,32 @@ void ScrollingPage::startPlayback()
 
     // Start strip animation:
     const int yOffset = musicStrips[0]->getBeatHeight() * beatCount;
-    const int scrollTime = 36000 / bpm * (beatCount + 1);
+    const int scrollTime = 36000 / bpm * (beatCount + 1) / 2;
     for (MusicStrip* strip : musicStrips)
     {
         Layout::Transition::Animator::transformBounds(strip,
                 strip->getBounds().translated(0, -yOffset), scrollTime);
     }
-    Layout::Transition::Animator::transformBounds(&noteGrid,
-            noteGrid.getBounds().translated(0, -yOffset), scrollTime, false,
-            [this](){ scrollToCurrentPos(); });
+    playLabel.setText("Stop:", NotificationType::dontSendNotification);
+    playButton.setImage("stop_svg");
 
     playbackTimer.startPlayback(&noteGrid, bpm);
+    Layout::Transition::Animator::transformBounds(&noteGrid,
+            noteGrid.getBounds().translated(0, -yOffset), scrollTime, false,
+            [this](){ stopPlayback(); });
 }
 
+// Stops playback and resets the page from playback mode.
+void ScrollingPage::stopPlayback()
+{
+    if (playbackTimer.isTimerRunning())
+    {
+        playbackTimer.stopPlayback();
+    }
+    playLabel.setText("Play:", NotificationType::dontSendNotification);
+    playButton.setImage("rightIcon_svg");
+    scrollToCurrentPos();
+}
 
 // Applies the page layout when the component's bounds change.
 void ScrollingPage::resized()
@@ -353,7 +371,7 @@ void ScrollingPage::loadData()
     if (file.validFile())
     {
         noteGrid.clear();
-        DBG("Found bpm = " << file.getBPM());
+        //DBG("Found bpm = " << file.getBPM());
         bpmEditor.setText(String(file.getBPM()));
         file.exportToNoteGrid(&noteGrid);
 

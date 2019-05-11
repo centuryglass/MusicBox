@@ -15,9 +15,10 @@ NoteGrid::NoteGrid()
 void NoteGrid::addNote(const int note, const int beat)
 {
     noteMap[beat].add(note);
-    DBG("Added note "  << note << ", there are now "
-            << noteMap[beat].size() << " note(s) at beat "
-            << beat);
+    //DBG("Added note "  << note << ", there are now "
+    //        << noteMap[beat].size() << " note(s) at beat "
+    //        << beat);
+    resetHighlighting();
     repaint();
 }
 
@@ -54,6 +55,12 @@ Array<int> NoteGrid::getNotes(const int beat, const bool highlight)
     return noteMap[beat];
 }
 
+
+// Removes all playback highlighting.
+void NoteGrid::resetHighlighting()
+{
+    beatColors.clear();
+}
 
 // Sets the scale used to convert beat and note indices to points within the
 // component.
@@ -131,7 +138,7 @@ void NoteGrid::paint(Graphics& g)
             else
             {
                 g.setColour(beatColor);
-                beatColor = beatColor.darker(0.01);
+                beatColor = beatColor.darker(0.02);
             }
         }
         const float yPos = (float) iter.first * beatHeight - drawnWidth / 2

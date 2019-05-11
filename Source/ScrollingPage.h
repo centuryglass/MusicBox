@@ -56,6 +56,11 @@ private:
     void startPlayback();
 
     /**
+     * @brief  Stops playback and resets the page from playback mode.
+     */
+    void stopPlayback();
+
+    /**
      * @brief  Applies the page layout when the component's bounds change.
      */
     void resized() override;

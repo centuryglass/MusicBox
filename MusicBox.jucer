@@ -5,15 +5,47 @@
               headerPath="../../Source&#10;../../Source/Windows&#10;../../Source/Util&#10;../../Source/Layout&#10;../../Source/Layout/Group&#10;../../Source/Layout/Transition&#10;../../Source/Widgets&#10;../../Source/Assets&#10;../../JuceLibraryCode&#10;../../Source/Audio">
   <MAINGROUP id="rGX7Oi" name="MusicBox">
     <GROUP id="{2E5C641E-1EFF-A00A-E334-A1C328C3EA7D}" name="Resources">
-      <FILE id="zhLZKF" name="downIcon.svg" compile="0" resource="1" file="Assets/NavButton/downIcon.svg"/>
-      <FILE id="KN9m0B" name="leftIcon.svg" compile="0" resource="1" file="Assets/NavButton/leftIcon.svg"/>
-      <FILE id="QElDSF" name="musicMid.svg" compile="0" resource="1" file="Assets/musicMid.svg"/>
-      <FILE id="V4WDLI" name="musicStart.svg" compile="0" resource="1" file="Assets/musicStart.svg"/>
-      <FILE id="NMp7Bk" name="musicStrip.svg" compile="0" resource="1" file="Assets/musicStrip.svg"/>
-      <FILE id="aOXiHl" name="musicStrip_backup.svg" compile="0" resource="1"
-            file="Assets/musicStrip_backup.svg"/>
-      <FILE id="uff2pL" name="rightIcon.svg" compile="0" resource="1" file="Assets/NavButton/rightIcon.svg"/>
-      <FILE id="UWUQ8D" name="upIcon.svg" compile="0" resource="1" file="Assets/NavButton/upIcon.svg"/>
+      <FILE id="xlkN9v" name="177940__ubikphonik__g2.aiff" compile="0" resource="1"
+            file="Assets/ubikphonik_music-box-samples/177940__ubikphonik__g2.aiff"/>
+      <FILE id="HWcf7F" name="177941__ubikphonik__g1.aiff" compile="0" resource="1"
+            file="Assets/ubikphonik_music-box-samples/177941__ubikphonik__g1.aiff"/>
+      <FILE id="Df53Dm" name="177942__ubikphonik__f2.aiff" compile="0" resource="1"
+            file="Assets/ubikphonik_music-box-samples/177942__ubikphonik__f2.aiff"/>
+      <FILE id="NxnpbT" name="177943__ubikphonik__f1.aiff" compile="0" resource="1"
+            file="Assets/ubikphonik_music-box-samples/177943__ubikphonik__f1.aiff"/>
+      <FILE id="jlmiJI" name="177944__ubikphonik__bb1.aiff" compile="0" resource="1"
+            file="Assets/ubikphonik_music-box-samples/177944__ubikphonik__bb1.aiff"/>
+      <FILE id="YzznH1" name="177945__ubikphonik__ab3.aiff" compile="0" resource="1"
+            file="Assets/ubikphonik_music-box-samples/177945__ubikphonik__ab3.aiff"/>
+      <FILE id="vdpbPa" name="177946__ubikphonik__ab2.aiff" compile="0" resource="1"
+            file="Assets/ubikphonik_music-box-samples/177946__ubikphonik__ab2.aiff"/>
+      <FILE id="RFrx6T" name="177947__ubikphonik__ab1.aiff" compile="0" resource="1"
+            file="Assets/ubikphonik_music-box-samples/177947__ubikphonik__ab1.aiff"/>
+      <FILE id="sZhE02" name="177948__ubikphonik__c1.aiff" compile="0" resource="1"
+            file="Assets/ubikphonik_music-box-samples/177948__ubikphonik__c1.aiff"/>
+      <FILE id="vOjeGK" name="177949__ubikphonik__bb2.aiff" compile="0" resource="1"
+            file="Assets/ubikphonik_music-box-samples/177949__ubikphonik__bb2.aiff"/>
+      <FILE id="eiYbFW" name="177950__ubikphonik__db1.aiff" compile="0" resource="1"
+            file="Assets/ubikphonik_music-box-samples/177950__ubikphonik__db1.aiff"/>
+      <FILE id="fXXfHY" name="177951__ubikphonik__c2.aiff" compile="0" resource="1"
+            file="Assets/ubikphonik_music-box-samples/177951__ubikphonik__c2.aiff"/>
+      <FILE id="wSPaAy" name="177952__ubikphonik__db2.aiff" compile="0" resource="1"
+            file="Assets/ubikphonik_music-box-samples/177952__ubikphonik__db2.aiff"/>
+      <FILE id="ztmsXr" name="177953__ubikphonik__eb2.aiff" compile="0" resource="1"
+            file="Assets/ubikphonik_music-box-samples/177953__ubikphonik__eb2.aiff"/>
+      <FILE id="zOHbF7" name="177954__ubikphonik__eb1.aiff" compile="0" resource="1"
+            file="Assets/ubikphonik_music-box-samples/177954__ubikphonik__eb1.aiff"/>
+      <FILE id="LRU9Na" name="downIcon.svg" compile="0" resource="1" file="Assets/NavButton/downIcon.svg"/>
+      <FILE id="b28PHv" name="icon.png" compile="0" resource="1" file="Assets/icon.png"/>
+      <FILE id="NVWqhY" name="leftIcon.svg" compile="0" resource="1" file="Assets/NavButton/leftIcon.svg"/>
+      <FILE id="yLs1pG" name="musicMid.svg" compile="0" resource="1" file="Assets/musicMid.svg"/>
+      <FILE id="PhuPsk" name="musicStart.svg" compile="0" resource="1" file="Assets/musicStart.svg"/>
+      <FILE id="PvYkdv" name="musicStrip.svg" compile="0" resource="1" file="Assets/musicStrip.svg"/>
+      <FILE id="KekMbS" name="musicStrip2.svg" compile="0" resource="1" file="Assets/musicStrip2.svg"/>
+      <FILE id="CwiTyT" name="notes.svg" compile="0" resource="1" file="Assets/notes.svg"/>
+      <FILE id="RrvfG7" name="rightIcon.svg" compile="0" resource="1" file="Assets/NavButton/rightIcon.svg"/>
+      <FILE id="xavkXa" name="stop.svg" compile="0" resource="1" file="Assets/NavButton/stop.svg"/>
+      <FILE id="Re8f7k" name="upIcon.svg" compile="0" resource="1" file="Assets/NavButton/upIcon.svg"/>
     </GROUP>
     <GROUP id="{E9075697-5B0E-6F18-67B0-BE03B122384F}" name="Source">
       <GROUP id="{01CA99AC-3558-D9D7-178B-9A77B0639250}" name="Audio">
@@ -97,10 +129,10 @@
     <FILE id="yl7M2g" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
   </MAINGROUP>
   <EXPORTFORMATS>
-    <XCODE_MAC targetFolder="Builds/MacOSX">
+    <XCODE_MAC targetFolder="Builds/MacOSX" smallIcon="b28PHv" bigIcon="b28PHv">
       <CONFIGURATIONS>
-        <CONFIGURATION isDebug="1" name="Debug"/>
-        <CONFIGURATION isDebug="0" name="Release"/>
+        <CONFIGURATION isDebug="1" name="Debug" osxCompatibility="10.14 SDK" osxSDK="10.14 SDK"/>
+        <CONFIGURATION isDebug="0" name="Release" osxCompatibility="10.14 SDK"/>
       </CONFIGURATIONS>
       <MODULEPATHS>
         <MODULEPATH id="juce_audio_basics" path="../../../../../opt/JUCE/modules"/>
@@ -116,7 +148,7 @@
         <MODULEPATH id="juce_gui_extra" path="../../../../../opt/JUCE/modules"/>
       </MODULEPATHS>
     </XCODE_MAC>
-    <LINUX_MAKE targetFolder="Builds/LinuxMakefile">
+    <LINUX_MAKE targetFolder="Builds/LinuxMakefile" smallIcon="b28PHv" bigIcon="b28PHv">
       <CONFIGURATIONS>
         <CONFIGURATION isDebug="1" name="Debug"/>
         <CONFIGURATION isDebug="0" name="Release"/>

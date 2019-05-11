@@ -1,7 +1,7 @@
 #include "MusicStrip.h"
 
-static const constexpr char* startPath = "musicStart.svg";
-static const constexpr char* midPath   = "musicMid.svg";
+static const constexpr char* startPath = "musicStart_svg";
+static const constexpr char* midPath   = "musicMid_svg";
 static const constexpr int width = 107;
 static const constexpr int height = 243;
 static const constexpr int paddedWidth = 165;
@@ -162,8 +162,8 @@ void MusicStrip::mouseDown(const MouseEvent& event)
     const int beat = getClosestBeat(event.position.y, maxError);
     if (note != -1 && beat != -1)
     {
-        DBG("note " << note << ", beat " << beat << " clicked, notifying "
-                << listeners.size() << " listeners.");
+        //DBG("note " << note << ", beat " << beat << " clicked, notifying "
+        //        << listeners.size() << " listeners.");
         for (Listener* listener : listeners)
         {
             listener->noteClicked(this, note, beat);

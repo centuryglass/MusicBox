@@ -1,13 +1,55 @@
 #include "Assets.h"
+#include "BinaryData.h"
+#include <map>
 
 #ifdef JUCE_DEBUG
 // Print namespace before all debug output:
 static const constexpr char* dbgPrefix = "Assets::";
 #endif
 
-// TODO: Select this using XDGDirectories:
-static const constexpr char* assetFolder = "./Assets/";
+static const constexpr char* assetFolder = "./AssetBreaks/";
 
+// Caches temporary files loaded from binary:
+static std::map<String, File> tempCache;
+
+
+// Loads a temporary file from a binary resource.
+File Assets::createBinaryTempFile(const String resourceName)
+{
+    if (tempCache.count(resourceName) > 0)
+    {
+        return tempCache[resourceName];
+    }
+    String extension(".");
+    extension += resourceName.fromLastOccurrenceOf("_", false, true);
+    File tempFile = File::createTempFile(extension);
+    int dataSize = -1;
+    const char* resourceData = BinaryData::getNamedResource(
+            resourceName.toRawUTF8(), dataSize);
+    if (dataSize > 0 && resourceData != nullptr)
+    {
+        tempFile.replaceWithData(resourceData, dataSize);
+        tempCache[resourceName] = tempFile;
+        //DBG("Found and loaded temp resource " << resourceName
+        //        << " as " << tempFile.getFullPathName());
+    }
+    else
+    {
+        DBG("Found but couldn't load temp resource " << resourceName);
+        return File();
+    }
+    return tempFile;
+}
+
+// Removes and deletes all temporary files created from binary data.
+void Assets::clearTempCache()
+{
+    for (auto& iter : tempCache)
+    {
+        iter.second.deleteFile();
+    }
+    tempCache.clear();
+}
 
 /**
  * @brief  Locates a file from an absolute or local path.
@@ -29,8 +71,12 @@ static juce::File absoluteFileFromPath(const juce::String& path)
 juce::File Assets::findAssetFile
 (const juce::String& assetName, bool lookOutsideAssets)
 {
-    juce::File assetFile
-            = absoluteFileFromPath(juce::String(assetFolder) + assetName);
+    File assetFile = createBinaryTempFile(assetName);
+    if (! assetFile.exists())
+    {
+        juce::File assetFile
+                = absoluteFileFromPath(juce::String(assetFolder) + assetName);
+    }
     if (!assetFile.existsAsFile() && lookOutsideAssets)
     {
         assetFile = absoluteFileFromPath(assetName);

@@ -76,6 +76,11 @@ public:
      */
     bool writeToFile();
 
+    /**
+     * @brief  Writes all data to SVG note files.
+     */
+    void writeToSVG();
+
 private:
     String path;
     int bpm = 60;

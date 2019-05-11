@@ -462,4 +462,4 @@ build/intermediate/Release/MusicFile_df43ca22.o: \
  /opt/JUCE/modules/juce_gui_extra/misc/juce_LiveConstantEditor.h \
  /opt/JUCE/modules/juce_gui_extra/misc/juce_AnimatedAppComponent.h \
  ../../JuceLibraryCode/BinaryData.h ../../Source/NoteGrid.h \
- ../../Source/Windows/Windows_Info.h
+ ../../Source/Windows/Windows_Info.h ../../Source/Assets/Assets.h
