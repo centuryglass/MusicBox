@@ -1183,7 +1183,7 @@
 		AC99C098F083CB15CD058696 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_LINK_OBJC_RUNTIME = NO;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -1223,20 +1223,20 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = Info-App.plist;
-				INFOPLIST_PREPROCESS = NO;
+				INFOPLIST_PREPROCESS = YES;
 				INSTALL_PATH = "$(HOME)/Applications";
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.MusicBox;
 				PRODUCT_NAME = "MusicBox";
 				SDKROOT = macosx10.14;
-				USE_HEADERMAP = NO;
+				USE_HEADERMAP = YES;
 			};
 			name = Debug;
 		};
 		E30D9B3FEF4852BCB9EEE76A = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_LINK_OBJC_RUNTIME = NO;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -1277,13 +1277,14 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = Info-App.plist;
-				INFOPLIST_PREPROCESS = NO;
+				INFOPLIST_PREPROCESS = YES;
 				INSTALL_PATH = "$(HOME)/Applications";
 				LLVM_LTO = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.MusicBox;
 				PRODUCT_NAME = "MusicBox";
-				USE_HEADERMAP = NO;
+				SDKROOT = macosx10.14;
+				USE_HEADERMAP = YES;
 			};
 			name = Release;
 		};

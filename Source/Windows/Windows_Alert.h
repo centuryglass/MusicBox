@@ -5,9 +5,10 @@
  * @brief  Provides convenience functions for creating simple popup alert
  *         windows.
  */
+#include <functional>
 
 namespace juce { class String; }
-namespace std { template<typename T> class function; }
+
 
 namespace Windows
 {
