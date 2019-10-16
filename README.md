@@ -1,4 +1,6 @@
-#MusicBox
+# MusicBox
+![MusicBox main interface](./screenshot.png?raw=true "MusicBox main interface")
+
 
 A multi-platform GUI application for creating music strips for 15 note music boxes. Completed in about four days as a Mother's Day gift. Thanks to the JUCE library, this project can be easily compiled for Linux, Mac OS, and iOS. It would almost certainly be possible to compile it for Windows as well, but I haven't tried it personally.
 
